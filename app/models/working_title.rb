@@ -1,0 +1,2 @@
+class WorkingTitle < ApplicationRecord
+end

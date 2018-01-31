@@ -4,4 +4,6 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+WorkingTitle.create(title: 'best project ever')
+WorkingTitle.create(title: 'the project to rule the world')
+WorkingTitle.create(title: 'final draft 3.0')

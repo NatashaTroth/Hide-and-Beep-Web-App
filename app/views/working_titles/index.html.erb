@@ -1,0 +1,28 @@
+<header>
+  <p id="notice">
+    <%= notice %>
+  </p>
+  <h1>💎 🛤  - A Ruby on Rails App </h1>
+  <p><em>This App uses postgresql</em></p>
+  <p>
+    <%=  Rails.application.class.parent_name %> @
+      <%= request.original_url %>
+  </p>
+</header>
+<main>
+  <p>We are still discussing the title for the project.</p>
+  <%= link_to 'New Working Title', new_working_title_path %>
+    <% @working_titles.each do |working_title| %>
+      <article>
+        <h3><%= working_title.title %></h3>
+        <p>
+          <%= link_to 'Show', working_title %>,
+            <%= link_to 'Edit', edit_working_title_path(working_title) %>,
+              <%= link_to 'Destroy', working_title, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </article>
+      <% end %>
+</main>
+<footer>
+  <p><small>You need to <a href="https://support.healthcareblocks.com/support/solutions/articles/1000228829-ruby-on-rails-quickstart-guide">prepare your rails app</a> before you can deploy to dokku.</small></p>
+</footer>
