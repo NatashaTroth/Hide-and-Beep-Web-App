@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @hint.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @hint.latitude %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @hint.text %>
+</p>
+
+<p>
+  <strong>Hunt:</strong>
+  <%= @hint.hunt_id %>
+</p>
+
+<%= link_to 'Edit', edit_hint_path(@hint) %> |
+<%= link_to 'Back', hints_path %>

@@ -1,2 +1,0 @@
-class WorkingTitle < ApplicationRecord
-end

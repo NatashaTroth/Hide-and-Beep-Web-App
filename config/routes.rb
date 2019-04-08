@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :working_titles
-  root 'working_titles#index'
+  resources :hints
+  resources :hunts
+  root 'pages#home'
 end

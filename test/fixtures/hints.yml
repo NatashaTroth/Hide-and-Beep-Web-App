@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  longitude: 9.99
+  latitude: 9.99
+  text: MyText
+  hunt_id: 1
+
+two:
+  longitude: 9.99
+  latitude: 9.99
+  text: MyText
+  hunt_id: 1

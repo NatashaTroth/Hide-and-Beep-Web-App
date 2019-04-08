@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hunt.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @hunt.start_date %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @hunt.expiry_date %>
+</p>
+
+<p>
+  <strong>Set time limit:</strong>
+  <%= @hunt.set_time_limit %>
+</p>
+
+<p>
+  <strong>No time limit:</strong>
+  <%= @hunt.no_time_limit %>
+</p>
+
+<p>
+  <strong>Winning code:</strong>
+  <%= @hunt.winning_code %>
+</p>
+
+<%= link_to 'Edit', edit_hunt_path(@hunt) %> |
+<%= link_to 'Back', hunts_path %>

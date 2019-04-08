@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2019-04-08 16:20:36
+  expiry_date: 2019-04-08 16:20:36
+  set_time_limit: 2019-04-08 16:20:36
+  no_time_limit: false
+  winning_code: MyString
+
+two:
+  name: MyString
+  start_date: 2019-04-08 16:20:36
+  expiry_date: 2019-04-08 16:20:36
+  set_time_limit: 2019-04-08 16:20:36
+  no_time_limit: false
+  winning_code: MyString
