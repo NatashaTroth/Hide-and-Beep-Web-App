@@ -7,11 +7,11 @@ default: &default
 
 development:
   <<: *default
-  database: dummy_development
+  database: hide-and-beep_development
 
 test:
   <<: *default
-  database: dummy_test
+  database: hide-and-beep_test
 
 production:
   <<: *default
