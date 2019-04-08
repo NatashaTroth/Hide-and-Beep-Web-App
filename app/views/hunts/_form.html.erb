@@ -16,6 +16,10 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="create-hunt__code create-hunt__div">
+      <%= form.label :winning_code, class: 'create-hunt__form-heading' %>
+      <%= form.text_field :winning_code %>
+    </div>
   
   <div class="create-hunt__start-date create-hunt__div">
     <%= form.label :start_date, class: 'create-hunt__form-heading' %>
@@ -27,10 +31,7 @@
     <%= form.date_field :expiry_date %>
   </div>
   
-  <div class="create-hunt__code create-hunt__div">
-    <%= form.label :winning_code, class: 'create-hunt__form-heading' %>
-    <%= form.text_field :winning_code %>
-  </div>
+
   
   <div class="create-hunt__time-limit create-hunt__div">
     <%= form.label :set_time_limit, class: 'create-hunt__form-heading' %>
