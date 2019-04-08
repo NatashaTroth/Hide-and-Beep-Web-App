@@ -4,8 +4,8 @@ class CreateHunts < ActiveRecord::Migration[5.2]
       t.string :name
       t.datetime :start_date
       t.datetime :expiry_date
-      t.time :set_time_limit
-      t.boolean :no_time_limit
+      t.time :set_time_limit, default: "0"
+      t.boolean :no_time_limit, default: false
       t.string :winning_code
 
       t.timestamps
