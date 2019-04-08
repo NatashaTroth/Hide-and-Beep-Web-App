@@ -1,0 +1,10 @@
+<header>
+    <nav class="header-navigation">
+        <%= link_to image_tag('owlHome.svg'), {action: 'home', controller: 'pages'}, class: "header-navigation__list-item owlButton" %>
+        <div class="header-navigation__buttons-right">
+            <%= link_to image_tag('accountBtn.svg'), {action: 'home', controller: 'pages'}, class: "header-navigation__list-item" %>
+            <%= link_to image_tag('logoutBtn.svg'), {action: 'home', controller: 'pages'}, class: "header-navigation__list-item" %>
+            <%= link_to image_tag('helpBtn.svg'), '/help', class: "header-navigation__list-item" %>
+        </div>
+    </nav>
+</header>
