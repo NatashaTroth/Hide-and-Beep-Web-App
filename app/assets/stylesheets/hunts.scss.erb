@@ -1,0 +1,181 @@
+@import 'variables';
+
+//CREATE HUNT AND EDIT
+.main-create-hunt{
+    background-image: image_url("huntGrassWithClouds.svg");
+}
+
+.create-hunt__tab-hunt, .create-hunt__tab-hints {
+    background: $themeGreen;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+    width:100px;
+    height: 8vh;
+
+    font-size: 20px;
+    box-shadow:none;
+
+    &:hover{
+        transform: scale(1);    //stop button hover effect on ta
+    }
+}
+
+.selected-tab{
+    //  padding:2%;
+    background: $cream;
+    // font-size:20px;
+ }
+
+
+.create-hunt__hunt-article, .create-hint__hints-article {
+    background: $cream;
+    // height: 50vh;
+    box-shadow: 3px 3px 2px #aaaaaa;  
+}
+
+.create-hunt__section{
+    margin-top: 5vh;
+
+    //SHOULD CHANGE THIS TO CLASSES
+    form{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        // padding: 10;
+        padding:5vh 5vw; 
+    }
+}
+
+.create-hunt__form-heading{
+    font-size: 18px;
+    margin-bottom: 1vh;
+}
+
+.create-hunt{
+    
+    &__div{
+        display: flex;
+        flex-direction: column;
+        margin:2vw;
+        justify-content: space-between;
+    }
+
+    &__name{
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+
+
+    &__start-date{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    &__expiry-date{
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    &__code{
+        grid-row: 1/2;
+        grid-column: 3/5;   
+    }
+
+    &__time-limit{
+        grid-row: 3/4;
+        grid-column: 1/2; 
+    }
+
+    &__no-time-limit{
+        grid-row: 3/4;
+        grid-column: 2/3; 
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+        padding-top:4vh;
+    }
+
+    &__submit-button{
+        grid-row: 3/4;
+        grid-column: 4/5; 
+        // place-self: end normal; //grid, stop button from stretching over grid space
+        align-self: end;
+        // margin-right:5vw !important;
+        width:90%;
+    }
+
+}
+
+// Hint Section
+
+
+.textArea-submitBtn__div {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-hint-text__form-heading {
+    padding: 10px;
+}
+
+
+
+.hunts-index{
+
+    &__section{
+        background: $cream;
+        box-shadow: 3px 3px 2px #aaaaaa;  
+        // max-width: ech;
+        line-height: 1.6;
+        padding: 2vh 2vw;
+        margin-top:3vh;
+        // display: grid;
+        // grid-template-rows: 1;
+        // grid-template-columns: 2fr 1fr 1fr; 
+        width: 80vw
+
+    }
+    
+    &__titles{
+        display:grid;
+        grid-template-rows: 1;
+        grid-template-columns: 2fr 1fr 1fr; 
+        grid-auto-flow: column;
+        justify-items: center;
+        margin-bottom: 2vh;
+    }
+
+    &__title-name{
+        justify-self: start;
+    }
+
+    &__list-element{
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-rows: 1;
+        grid-template-columns: 2fr 1fr 0.5fr 0.5fr; 
+        grid-auto-flow: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__hunt-name{
+        height: 2vh;
+        box-shadow: none;
+        display: inline-flex;
+        align-items: center; 
+        justify-self: start;
+    }
+
+    &__edit-button, &__delete-button{
+        width:50px;
+        justify-self: end;
+    }
+    &__delete-button{
+        justify-self: center;
+    }
+}
