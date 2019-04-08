@@ -14,6 +14,15 @@
  *= require_self
  */
 
+@import 'variables';
+@import "global";
+@import 'reset';
+@import 'global';
+@import 'header';
+@import 'help';
+@import 'showHunts';
+
+
 
 body {
   margin:0;

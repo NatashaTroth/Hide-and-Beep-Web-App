@@ -1,0 +1,34 @@
+.home__logo{
+    width: 40vw;
+    text-align: center;
+}
+
+.main-home{
+    background-image: url('../images/homeGrassWithClouds.svg') !important;
+}
+
+.home-navigation-buttons{
+    display:block;
+    margin-top:10vh;
+    display: flex;
+    flex-direction: column;
+    // width: 300px;
+
+
+
+    &__list-element{
+        margin: 2vh auto;
+        
+        
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    &__button{
+        text-decoration: none;
+        text-align: center !important; 
+        color: black;
+        display: block;
+    }
+}

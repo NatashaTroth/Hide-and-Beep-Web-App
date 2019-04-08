@@ -1,3 +1,9 @@
-// Place all the styles related to the Hints controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Hint Section
+.textArea-submitBtn__div {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-hint-text__form-heading {
+    padding: 10px;
+}
