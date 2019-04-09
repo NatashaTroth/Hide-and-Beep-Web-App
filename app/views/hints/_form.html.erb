@@ -3,9 +3,9 @@
     <div id="error_explanation">
       <h2><%= pluralize(hint.errors.count, "error") %> prohibited this hint from being saved:</h2>
 
-      <ul>
+      <ul class="error_explanation__list">
       <% hint.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="error_explanation__list-element"><%= message %></li>
       <% end %>
       </ul>
     </div>
