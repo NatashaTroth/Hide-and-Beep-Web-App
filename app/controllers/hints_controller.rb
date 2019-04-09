@@ -44,7 +44,7 @@ class HintsController < ApplicationController
   def update
     respond_to do |format|
       if @hint.update(hint_params)
-        format.html { redirect_to @hint, notice: 'Hint was successfully updated.' }
+        format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully updated.' }
         format.json { render :show, status: :ok, location: @hint }
       else
         format.html { render :edit }

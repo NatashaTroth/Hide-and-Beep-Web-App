@@ -6,13 +6,14 @@
     &__hint-article {
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;  
-        display: flex;
-        flex-direction:column;
         padding-bottom: 5vh;
+        width: 80vw;
+        height: 60vh;
     }
 
     &__section {
         margin-top: 5vh;
+
         form {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
@@ -25,6 +26,41 @@
         font-size: 18px;
         margin-bottom: 2vh;
     }
+
+    &__longitude {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    &__latitude {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    &__text {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    &__createBtn {
+        grid-row: 4/5;
+        grid-column: 1/2;
+        margin: 20px 0 20px 0;
+    }
+
+    &__new-hint-btn {
+        text-align: right;
+        margin: 50px 0 30px 0;
+    }
+
+    &__inputfield {
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    &__back-btn {
+        margin-left: 70px;
+    }
 }
 
 .hints-index {
@@ -35,7 +71,7 @@
         line-height: 1.6;
         padding: 2vh 2vw;
         margin-top:3vh;
-        width: 80vw
+        min-width: 80vw
     }
     
     &__titles {
@@ -74,11 +110,7 @@
     }
 }
 
-.create-hint__new-hint-btn {
-    text-align: right;
-    margin: 50px 0 30px 0;
+.field {
+    display: flex;
+    flex-direction: column;
 }
-
-// Add Hint
-
-
