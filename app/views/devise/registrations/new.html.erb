@@ -1,18 +1,18 @@
 <main class="main-signup">
-    <%= image_tag 'loginLogo.svg', class:"login__logo" %>
+    <%= image_tag 'loginLogo.svg', class:"signup__logo" %>
 
-    <div class="login-sheepBubble__flex">
+    <div class="signup-sheepBubble__flex">
       
-        <%= image_tag 'SheepWithSpeechBubble.svg', class:"login__sheepWithSpeechBubble" %>
+        <%= image_tag 'SheepWithSpeechBubble.svg', class:"signup__sheepWithSpeechBubble" %>
       
-        <section class="login-signup__section">
-            <article class="js-article-login login__login-article">
+        <section>
+            <article class="signup__signup-article">
               <div>
-                  <h1 class="login__h1">Sign up:</h1>
-                  <%= image_tag 'keyholeWithSheeps.svg', class:"login__keyhole-image", alt:"Keyhole with sheep" %>
+                  <h1 class="signup__h1">Sign up:</h1>
+                  <%= image_tag 'keyholeWithSheeps.svg', class:"signup__keyhole-image", alt:"Keyhole with sheep" %>
               </div>
         
-                <div class="login__form-links-container">
+                <div class="signup__form-links-container">
 
                   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
