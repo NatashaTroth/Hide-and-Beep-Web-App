@@ -6,7 +6,7 @@
     background-image: image_url("huntGrassWithClouds.svg");
 }
 
-.create-hunt__tab-hunt, .create-hunt__tab-hints {
+.create-hunt__tab-hunt{
     background: $themeGreen;
     margin: 0;
     border: none;
@@ -31,10 +31,13 @@
  }
 
 
-.create-hunt__hunt-article, .create-hint__hints-article {
+.create-hunt__hunt-article{
     background: $cream;
     // height: 50vh;
     box-shadow: 3px 3px 2px #aaaaaa;  
+    display: flex;
+    flex-direction:column;
+
 }
 
 .create-hunt__section{
@@ -46,7 +49,7 @@
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
         // padding: 10;
-        padding:5vh 5vw; 
+        padding:5vh 5vw 2vh; 
     }
 }
 
@@ -111,6 +114,16 @@
 
 }
 
+//Back button on edit hunt page
+.edit-hunt__back-button{
+
+    display: none;
+    align-self: flex-end;
+     max-width: 65px;
+     text-align: center;
+     margin: auto 5vw 5vh 0;
+}
+
 
 
 
@@ -172,4 +185,3 @@
     }
 }
 
-edit-hunt__back-button

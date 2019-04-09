@@ -1,3 +1,4 @@
+@import 'variables';
 // Hint Section
 .textArea-submitBtn__div {
     display: flex;
@@ -8,3 +9,25 @@
     padding: 10px;
 }
 
+ .create-hint__hints-article {
+    background: $cream;
+    // height: 50vh;
+    box-shadow: 3px 3px 2px #aaaaaa;  
+}
+.create-hunt__tab-hints {
+    background: $themeGreen;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+    width:100px;
+    height: 8vh;
+
+    font-size: 20px;
+    box-shadow:none;
+
+    &:hover{
+        transform: scale(1);    //stop button hover effect on ta
+    }
+}
