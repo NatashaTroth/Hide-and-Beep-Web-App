@@ -1,13 +1,16 @@
 <main class="main-login">
-    <h1 class="hidden">Login</h1>
     <%= image_tag 'loginLogo.svg', class:"login__logo" %>
 
     <div class="login-sheepBubble__flex">
+      
         <%= image_tag 'SheepWithSpeechBubble.svg', class:"login__sheepWithSpeechBubble" %>
       
         <section class="login-signIn__section">
             <article class="js-article-login login__login-article">
-                <%= image_tag 'keyholeWithSheeps.svg', class:"login__keyhole-image", alt:"Keyhole with sheeps" %>
+              <div>
+                  <h1 class="login__h1">Login:</h1>
+                  <%= image_tag 'keyholeWithSheeps.svg', class:"login__keyhole-image", alt:"Keyhole with sheep" %>
+              </div>
         
 
                 <div class="login__form-links-container">

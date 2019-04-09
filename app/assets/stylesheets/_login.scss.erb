@@ -1,27 +1,57 @@
 @import 'variables';
 
-.login-sheepBubble__flex {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
+
+.login{
+
+    &__h1{
+        font-size:25px;
+        margin: 0;
+        text-align: center;
+    }
 
 
+    &-sheepBubble__flex {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
 
-.login__logo {
-    width: 50vw;
-    margin-top: 0;
-}
+    &__logo {
+        width: 50vw;
+        margin-top: 0;
+    }
 
-.login__keyhole-image {
-    height: 30vh;
-    padding: 20px;
-}
+    &__keyhole-image {
+        height: 30vh;
+        padding: 20px;
+    }
 
-.login__sheepWithSpeechBubble {
-    width: 30vw;
-    padding: 20px;
+    &__sheepWithSpeechBubble {
+        width: 30vw;
+        padding: 20px;
+    }
+
+    &__form-links-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__button{
+        padding:7px 0;
+        text-align: center;
+        box-shadow: none;
+        font-size: 0.99rem;
+        max-width: 150px;
+        margin: 1vh auto;
+    }
+
+    &__smaller-print{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
 }
 
 .login__tab-login, .signIn__tab-signIn {
@@ -37,7 +67,7 @@
     box-shadow:none;
 }
 
- .login__login-article, .signIn__signIn-article {
+.login__login-article, .signIn__signIn-article {
     background: $cream;
     box-shadow: 3px 3px 2px #aaaaaa;
     height: 35vh;
@@ -64,26 +94,6 @@
 .login__submit-button, .signIn__submit-button {
     margin-top: 40px;
     font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
-}
-
-.login__form-links-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.login__button{
-    padding:7px 0;
-    text-align: center;
-    box-shadow: none;
-    font-size: 0.99rem;
-    max-width: 150px;
-    margin: 1vh auto;
-}
-
-.login__smaller-print{
-    font-size: 0.8rem;
-    text-align: center;
 }
 
 // MEDIA QUERIES
