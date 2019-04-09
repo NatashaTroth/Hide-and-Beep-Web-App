@@ -1,0 +1,90 @@
+@import 'variables';
+
+body{
+    font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
+    background-image: linear-gradient($skyBlue, $blueWhite) !important;
+    background-size: auto;
+    background-repeat: no-repeat;
+    // min-height: 100vh;
+}
+
+main{
+    
+    min-height:90vh;
+    background-image: image-url("loginGrass.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: auto 0;
+    padding: auto 0;
+    background-size: 102%;  //cut off sides
+    margin-top: 6px;    //cut off edge at the bottom
+
+    //Horizontally align everything in the centre
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    min-height:10vh;
+}
+
+.button{
+    display: block;
+    background: $themeOrange;
+    border-radius: 8px;
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+    display: inline;
+    font-size: 20px;
+    width: 100%;
+    border:none;
+    box-shadow: 3px 3px 2px #aaaaaa;  
+
+
+    &:hover{
+        // background: $themeGreen;
+        transform: scale(1.05);
+    }
+}
+
+// input[type=submit]{
+//     display: block;
+//     background: $themeOrange;
+//     white-space: normal;
+
+// }
+
+.hidden{
+    display: none;
+}
+
+h1{
+    color: $themeOrange;
+    font-size: 35px;
+    align-self: flex-start; //make it left
+    margin-left:5vw;
+    margin-top: 2vh;
+}
+
+input[type=text], input[type=date], input[type=search], input[type=time]{
+    font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
+    font-size: 15px;    
+}
+
+
+input[type=checkbox]{
+    transform: scale(1.5);
+    // margin-bottom: 1vh;
+}
+
+ input[type=submit]{
+    font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
+    display: block;
+    cursor: pointer;
+} 
+
+
+#error_explanation{
+    color: red;
+}
