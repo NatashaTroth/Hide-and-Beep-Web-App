@@ -1,6 +1,5 @@
 <header>
         <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
     <nav class="header-navigation">
         <%= link_to image_tag('owlHome.svg'), {action: 'home', controller: 'pages'}, class: "header-navigation__list-item owlButton" %>
         <div class="header-navigation__buttons-right">
@@ -9,8 +8,5 @@
             <%= link_to image_tag('helpBtn.svg'), '/help', class: "header-navigation__list-item" %>
         </div>
     </nav>
-    <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+    <% end %> 
 </header>
