@@ -1,5 +1,4 @@
 <header>
-        <% if user_signed_in? %>
     <nav class="header-navigation">
         <%= link_to image_tag('owlHome.svg'), {action: 'home', controller: 'pages'}, class: "header-navigation__list-item owlButton" %>
         <div class="header-navigation__buttons-right">
@@ -8,5 +7,4 @@
             <%= link_to image_tag('helpBtn.svg'), '/help', class: "header-navigation__list-item" %>
         </div>
     </nav>
-    <% end %> 
 </header>
