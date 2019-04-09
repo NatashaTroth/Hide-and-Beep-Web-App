@@ -12,26 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :longitude %>
+    <%= form.label :longitude, :class => 'create-hint__inputfield' %>
     <%= form.text_field :longitude %>
   </div>
 
   <div class="field">
-    <%= form.label :latitude %>
+    <%= form.label :latitude, :class => 'create-hint__inputfield' %>
     <%= form.text_field :latitude %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.label :text, :class => 'create-hint__inputfield' %>
+    <%= form.text_area :text, :class => 'create-hint__textarea' %>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= form.label :hunt_id %>
-    <%= form.number_field :hunt_id %>
+    <%= form.number_field :hunt_id, value: @hunt_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="actions field">
+    <%= form.submit :class => 'button create-hint__submitBtn' %>
   </div>
 <% end %>

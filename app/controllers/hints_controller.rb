@@ -4,7 +4,8 @@ class HintsController < ApplicationController
   # GET /hints
   # GET /hints.json
   def index
-    @hints = Hint.all
+    @hints = Hint.all.where("hunt_id = " + hunt_param)
+    @hunt_id = hunt_param
   end
 
   # GET /hints/1
@@ -29,7 +30,7 @@ class HintsController < ApplicationController
 
     respond_to do |format|
       if @hint.save
-        format.html { redirect_to @hint, notice: 'Hint was successfully created.' }
+        format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully created.' }
         format.json { render :show, status: :created, location: @hint }
       else
         format.html { render :new }
