@@ -1,37 +1,25 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<%= render '/partials/header' %>
+<main class="main-hunts-index">
+        <h1>Your Scavenger Hunts</h1>
+        <section class="hunts-index__section">
+          <div class="hunts-index__titles">
+              <h2 class="hunts-index__title-name">Name:</h2>
+              <h2>Start date:</h2>
+          </div>
+          <ul>
 
-<h1>Hunts</h1>
+            <% @hunts.each do |hunt| %>
+              <li class="hunts-index__list-element">
+                  <p class="hunts-index__hunt-name"><%= hunt.name %></p>
+                  <p><%= hunt.start_date.to_date %></p>
+                  <%= link_to image_tag('editBtn.svg'),  edit_hunt_path(hunt), class: "hunts-index__edit-button" %>
+                  <%= link_to image_tag('deleteBtn.svg'),  hunt, method: :delete, data: { confirm: 'Are you sure?' }, class: "hunts-index__delete-button" %>
+              </li>   
+           <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Start date</th>
-      <th>Expiry date</th>
-      <th>Set time limit</th>
-      <th>No time limit</th>
-      <th>Winning code</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @hunts.each do |hunt| %>
-      <tr>
-        <td><%= hunt.name %></td>
-        <td><%= hunt.start_date %></td>
-        <td><%= hunt.expiry_date %></td>
-        <td><%= hunt.set_time_limit %></td>
-        <td><%= hunt.no_time_limit %></td>
-        <td><%= hunt.winning_code %></td>
-        <td><%= link_to 'Show', hunt %></td>
-        <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-        <td><%= link_to 'Destroy', hunt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </ul>
+            </section>
+            </main>
 
-<br>
-
-<%= link_to 'New Hunt', new_hunt_path %>

@@ -1,0 +1,37 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home__logo{
+    width: 40vw;
+    text-align: center;
+}
+
+.main-home{
+    background-image:  image_url("homeGrassWithClouds.svg");
+}
+
+.home-navigation-buttons{
+    display:block;
+    margin-top:10vh;
+    display: flex;
+    flex-direction: column;
+    // width: 300px;
+
+
+
+    &__list-element{
+        margin: 2vh auto;
+        
+        
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    &__button{
+        text-decoration: none !important;   //NOT WORKING!!!!! - TODO: MAKE IT WORK
+        text-align: center !important; 
+        color: black;
+        display: block;
+    }
+}
