@@ -75,6 +75,6 @@ class HintsController < ApplicationController
     end
 
     def hunt_param
-        params.require(:hunt_id)
+      params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
     end
 end

@@ -5,39 +5,30 @@
 <main class="main-hunts-index">
 <h1>Hints</h1>
 
-<section class="hunts-index__section">
-<table>
-  <thead>
-    <tr class="create-hint__table">
-      <th>Longitude: </th>
-      <th>Latitude: </th>
-      <th>Text: </th>
-      <th>Hunt: </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="hints-index__section">
+<div class="hints-index__titles">
+<h2 class="hints-index__title-longitude">Longitude:</h2>
+<h2 class="hints-index__title-latitude">Latitude:</h2>
+<h2 class="hints-index__title-text">Text:</h2>
+<!--<h2>Hunt:</h2>-->
+</div>
 
-  <tbody>
-    <% @hints.each do |hint| %>
-      <tr>
-        <td><%= hint.longitude %></td>
-        <td><%= hint.latitude %></td>
-        <td><%= hint.text %></td>
-        <td><%= hint.hunt_id %></td>
-        <td><%= link_to 'Edit', edit_hint_path(hint) %></td>
-        <td><%= link_to 'Destroy', hint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul>
+<% @hints.each do |hint| %>
+  <li class="hints-index__list-element">
+    <p class="hints-index__longitude"><%= hint.longitude %></p>
+    <p class="hints-index__latitude"><%= hint.latitude %></p>
+    <p class="hints-index__text"><%= hint.text %></p>
+    <!--<p><%= hint.hunt_id %></p>-->
+    <%= link_to image_tag('editBtn.svg'), edit_hint_path(hint), class: "hints-index__edit-button" %>
+    <%= link_to image_tag('deleteBtn.svg'), hint, method: :delete, data: { confirm: 'Are you sure?' }, class: "hints-index__delete-button" %>
+    </li>  
+<% end %>
+</ul>
 
-<br>
-
-<p>
-<%= @hunt_id %>
-</p>
-
-<%= link_to 'New Hint', new_hint_path(:hunt_id => @hunt_id) %>
+<div class="create-hint__new-hint-btn">
+<%= link_to 'New Hint', new_hint_path(:hunt_id => @hunt_id), class: "button" %>
+</div>
 
 </section>
 </main>
