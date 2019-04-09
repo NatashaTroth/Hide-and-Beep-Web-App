@@ -1,0 +1,56 @@
+.header-navigation{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: image_url("cloud.svg");
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+    background-position-x: 60vw;
+    background-size: 30px;
+    // min-height:10vh;
+
+
+    &__list-item{
+        width:50px;
+        margin: 0.75vw 5px 0;
+
+        &:hover{
+            background: none;
+            transform: scale(1.05);
+        }
+    }
+
+    &__buttons-right{
+        display: flex;
+        
+    }
+}
+
+.owlButton{
+    width: 100px;
+    margin: 0.75vw 0 0;
+}
+
+.login-header{
+    display: flex;
+    justify-content: end;
+    
+    &__helpBtn{
+        text-align: right;
+        width:50px;
+        margin: 0.75vw 5px 0;
+    }
+    
+}
+
+
+.login-help-header{
+    display: flex;
+    justify-content: start;
+    
+    &__owlBtn{
+        justify-self: start;
+        text-align: left;
+
+    }
+}

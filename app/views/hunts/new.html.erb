@@ -1,5 +1,10 @@
-<h1>New Hunt</h1>
+<%= render '/partials/header' %>
+<main class="main-create-hunt">
+        <h1>Create Scavenger Hunt:</h1>
+        <section class="create-hunt__section create-hunt__section-hunt">
+            <article class="js-article-hunt create-hunt__hunt-article">
+                <%= render 'form', hunt: @hunt %>
 
-<%= render 'form', hunt: @hunt %>
-
-<%= link_to 'Back', hunts_path %>
+            </article>
+        </section>
+</main>
