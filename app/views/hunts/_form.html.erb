@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <h2><%= pluralize(hunt.errors.count, "error") %> prohibited this hunt from being saved:</h2>
 
-      <ul>
+      <ul class="error_explanation__list">
       <% hunt.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -34,8 +34,8 @@
 
   
   <div class="create-hunt__time-limit create-hunt__div">
-    <%= form.label :set_time_limit, class: 'create-hunt__form-heading' %>
-    <%= form.time_field :set_time_limit %>
+    <%= form.label "Set time limit (hh:mm)", class: 'create-hunt__form-heading' %>
+    <%= form.time_field :set_time_limit, value: "00:00" %>
   </div>
   
 

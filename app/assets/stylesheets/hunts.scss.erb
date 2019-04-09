@@ -1,9 +1,10 @@
 @import 'variables';
 @import 'global';
 
+
 //CREATE HUNT AND EDIT
 .main-create-hunt{
-    background-image: image_url("huntGrassWithClouds.svg");
+    //background-image: image_url("huntGrassWithClouds.svg");
 }
 
 .create-hunt__tab-hunt{
@@ -51,12 +52,13 @@
         grid-template-columns: repeat(3, 1fr);
         // padding: 10;
         padding:5vh 5vw 2vh;
+        //min-width:100vw;
     }
 }
 
 .create-hunt__form-heading{
     font-size: 18px;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
 }
 
 .create-hunt{
@@ -70,7 +72,7 @@
 
     &__name{
         grid-row: 1/2;
-        grid-column: 1/3;
+        grid-column: 1/2;
     }
 
 
@@ -86,7 +88,7 @@
 
     &__code{
         grid-row: 1/2;
-        grid-column: 3/5;   
+        grid-column: 2/3;   
     }
 
     &__time-limit{
@@ -100,12 +102,13 @@
         flex-direction: row;
         justify-content: space-evenly;
         align-items: baseline;
-        padding-top:4vh;
+        margin-top:6vh;
+        
     }
 
     &__submit-button{
         grid-row: 3/4;
-        grid-column: 4/5; 
+        grid-column: 3/4; 
         // place-self: end normal; //grid, stop button from stretching over grid space
         align-self: end;
         // margin-right:5vw !important;
