@@ -28,7 +28,7 @@ class HuntsController < ApplicationController
 
     respond_to do |format|
       if @hunt.save
-        format.html { redirect_to new_hint_path(hunt_id: @hunt.id), notice: 'Hunt was successfully created.' }
+        format.html { redirect_to @hunt, notice: 'Hunt was successfully created.' }
         format.json { render :show, status: :created, location: @hunt }
       else
         format.html { render :new }

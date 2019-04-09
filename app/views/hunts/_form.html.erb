@@ -11,38 +11,37 @@
     </div>
   <% end %>
 
-  <div class="create-hunt__name create-hunt__div">
-    <%= form.label :name, class: 'create-hunt__form-heading' %>
+  <div class="field">
+    <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="create-hunt__code create-hunt__div">
-      <%= form.label :winning_code, class: 'create-hunt__form-heading' %>
-      <%= form.text_field :winning_code %>
-    </div>
-  
-  <div class="create-hunt__start-date create-hunt__div">
-    <%= form.label :start_date, class: 'create-hunt__form-heading' %>
-    <%= form.date_field :start_date %>
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date %>
   </div>
-  
-  <div class="create-hunt__expiry-date create-hunt__div">
-    <%= form.label :expiry_date, class: 'create-hunt__form-heading' %>
-    <%= form.date_field :expiry_date %>
-  </div>
-  
 
-  
-  <div class="create-hunt__time-limit create-hunt__div">
-    <%= form.label :set_time_limit, class: 'create-hunt__form-heading' %>
-    <%= form.time_field :set_time_limit %>
+  <div class="field">
+    <%= form.label :expiry_date %>
+    <%= form.datetime_select :expiry_date %>
   </div>
-  
 
-  <div class="create-hunt__no-time-limit create-hunt__div">
-    <%= form.label :no_time_limit, class: 'create-hunt__form-heading' %>
+  <div class="field">
+    <%= form.label :set_time_limit %>
+    <%= form.time_select :set_time_limit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_time_limit %>
     <%= form.check_box :no_time_limit %>
   </div>
-  <%= form.submit "Save Hunt and add Hints", :class => 'button create-hunt__submit-button' %>
 
-  <% end %>
+  <div class="field">
+    <%= form.label :winning_code %>
+    <%= form.text_field :winning_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,12 +1,5 @@
-<%= render '/partials/header' %>
-<main class="main-home">
-    <%= image_tag 'logo.svg', class:"home__logo" %>
-    <h1 class="hidden">Hide and Beep home</h1>
-    <nav>
-        <ul class="home-navigation-buttons">
-            <li class="home-navigation-buttons__list-element button"><%= link_to 'Create new Scavenger Hunt', new_hunt_path, class: "home-navigation-buttons__button" %></li>
-            <li class="home-navigation-buttons__list-element button"><%= link_to 'View your created Hunts', hunts_path, class: "home-navigation-buttons__button" %></li>
+<h1>💎 🛤  - A Ruby on Rails App </h1>
+<p><%=  Rails.application.class.parent_name %> @ <%= request.original_url %></p>
 
-        </ul>
-    </nav>
-</main>
+
+<p><small>You need to <a href="https://support.healthcareblocks.com/support/solutions/articles/1000228829-ruby-on-rails-quickstart-guide">prepare your rails app</a> before you can deploy to dokku.</small></p>
