@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :hints
   resources :hunts
   get '/home', to: 'pages#home'
+  get '/help', to: 'pages#help'
+
 
   #root :to => redirect("/users/sign_in")
 
