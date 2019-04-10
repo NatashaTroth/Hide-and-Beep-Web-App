@@ -18,12 +18,12 @@
 
   <div class="field create-hint__div create-hint__longitude">
     <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :longitude %>
+    <%= form.text_field :longitude, :id => 'longitude' %>
   </div>
 
   <div class="field create-hint__div create-hint__latitude">
     <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :latitude %>
+    <%= form.text_field :latitude, :id => 'latitude' %>
   </div>
 
   <div class="field create-hint__div create-hint__text">
@@ -65,4 +65,21 @@
   function circle(long, lat) {
     L.circleMarker([lat, long], {radius: 1, color: 'red'}).addTo(map);
   }
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    var lat = ""
+    var lng = ""
+
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(map);
+
+    document.getElementById('latitude').value = e.latlng.lat
+    document.getElementById('longitude').value = e.latlng.lng
+  }
+  map.on('click', onMapClick)
+
 </script>
