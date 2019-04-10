@@ -15,8 +15,8 @@ class HintsController < ApplicationController
 
   # GET /hints/new
   def new
-    @hint = Hint.new
     @hunt_id = hunt_param
+    @hint = Hint.new(hunt_id: @hunt_id)
   end
 
   # GET /hints/1/edit
@@ -48,7 +48,8 @@ class HintsController < ApplicationController
         format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully updated.' }
         format.json { render :show, status: :ok, location: @hint }
       else
-        format.html { render :edit }
+        
+        format.html { render :edit } # plain: hints_path(hunt_id: @hint.hunt_id
         format.json { render json: @hint.errors, status: :unprocessable_entity }
       end
     end
