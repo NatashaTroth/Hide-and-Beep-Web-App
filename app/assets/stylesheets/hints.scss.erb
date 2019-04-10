@@ -16,7 +16,7 @@
             display: grid;
             grid-template-rows: repeat(3, 1fr);
             grid-template-columns: repeat(1fr 0.2fr 1fr 1fr 1fr 1fr);
-            padding:4vh 4vw 2vh;
+            padding:3vh 4vw 2vh;
         }
     }
 
@@ -62,21 +62,20 @@
         font-size: 18px;
     }
 
-    &__back-btn {
-        margin-left: 70px;
+    &__back-btn, &__backButton {
+        margin: 4vh 4vw;
     }
-
-    &__backButton {
-        margin-right: 20px;
-    }
-
+    
     &__textarea {
         font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
+    }
+
+    &__backBtn-hint-overview {
+        margin: 0 1.5vw;
     }
 }
 
 .hints-index {
-
     &__section {
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;  
@@ -138,6 +137,7 @@
 }
 
 #map {
+    padding-top: 2.5vh;
     height: 50vh; 
     grid-row: 2/6;
     grid-column: 3/7;
