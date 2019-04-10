@@ -2,6 +2,12 @@
 
 .main-login, .main-signup{
     min-height: 100vh;
+
+   /* form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }*/
 }
 
 .login__h1, .signup__h1{
@@ -70,6 +76,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 .login__button, .signup__button{
@@ -79,10 +86,14 @@
     font-size: 0.99rem;
     max-width: 150px;
     margin: 1vh auto;
+    align-self: flex-start;
+    margin-left: 0;
 }
 
 .signup__button{
-    margin-left: 1vw;;
+    margin-left: 1vw;
+//    align-self: flex-start;
+  //  display:none;
 }
 
 .login__smaller-print{
