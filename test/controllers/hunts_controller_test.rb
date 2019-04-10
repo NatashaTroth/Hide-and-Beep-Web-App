@@ -26,10 +26,6 @@ class HuntsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
    end
 
-  test "should not show hunt" do
-    get hunt_url(@hunt)
-    assert_response :redirect
-  end
 
   test "should not get edit" do
     get edit_hunt_url(@hunt)
@@ -61,21 +57,8 @@ class HuntsControllerUserTest < ActionDispatch::IntegrationTest
 
     @hunt = hunts(:one)
     @user = users(:one)
-    #post user_session_path, params: { email: 'test@test.at', encrypted_password: 'aSecret' }
-    # sign_in users(:one)
-    # get :index
-    # assert_response :success
-
     sign_in(@user)
-
   end
-
-  # def sign_in(user)
-  #   post user_session_path \
-  #     "user[email]"    => user.email,
-  #     "user[encrypted_password]" => user.encrypted_password
-  # end
-
 
   test "should get index" do
     get hunts_url
@@ -94,10 +77,6 @@ class HuntsControllerUserTest < ActionDispatch::IntegrationTest
    end
    
 
-  test "should show hunt" do
-    get hunt_url(@hunt)
-    assert_response :success
-  end
 
   test "should get edit" do
     get edit_hunt_url(@hunt)
