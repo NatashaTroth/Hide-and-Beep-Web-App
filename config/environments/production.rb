@@ -7,11 +7,14 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password:ENV["GMAIL_PASSWORD"]
+    user_name: "hideAndBeep@gmail.com",
+    password: "HidingAndBeeping5"
   }
 
 
+  config.action_mailer.default_url_options = { :host => 'hide-and-beep.projects.multimediatechnology.at' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
