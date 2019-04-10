@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="field create-hint__div create-hint__order">
+    <%= form.label :order, "Hint number", :class => 'create-hint__inputfield create-hunt__form-heading' %>
+    <%= form.text_field :order %>
+  </div>
+
   <div class="field create-hint__div create-hint__longitude">
     <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
     <%= form.text_field :longitude %>
@@ -28,7 +33,7 @@
 
   <div class="field hidden">
     <%= form.label :hunt_id %>
-    <%= form.number_field :hunt_id, value: @hunt_id %>
+    <%= form.hidden_field :hunt_id %>
   </div>
 
   <div class="actions-button field create-hint__createBtn">

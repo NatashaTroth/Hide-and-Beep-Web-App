@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_151931) do
   enable_extension "plpgsql"
 
   create_table "hints", force: :cascade do |t|
+    t.integer "order"
     t.decimal "longitude"
     t.decimal "latitude"
     t.text "text"

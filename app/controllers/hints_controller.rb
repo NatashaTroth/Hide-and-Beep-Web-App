@@ -15,8 +15,8 @@ class HintsController < ApplicationController
 
   # GET /hints/new
   def new
-    @hint = Hint.new
     @hunt_id = hunt_param
+    @hint = Hint.new(hunt_id: @hunt_id)
   end
 
   # GET /hints/1/edit
@@ -72,7 +72,7 @@ class HintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hint_params
-      params.require(:hint).permit(:longitude, :latitude, :text, :hunt_id)
+      params.require(:hint).permit(:order, :longitude, :latitude, :text, :hunt_id)
     end
 
     def hunt_param
