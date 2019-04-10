@@ -4,8 +4,13 @@ class HintsController < ApplicationController
   # GET /hints
   # GET /hints.json
   def index
-    @hints = Hint.all.where("hunt_id = " + hunt_param).order(:order)
-    @hunt_id = hunt_param
+    
+    if hunt_param.present?
+      @hints = Hint.all.where("hunt_id = " + hunt_param)
+      @hunt_id = hunt_param
+    else
+      redirect_to home_path
+    end
   end
 
   # GET /hints/1
@@ -76,6 +81,8 @@ class HintsController < ApplicationController
     end
 
     def hunt_param
-      params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+      if params.has_key?(:hunt_id)
+        params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+      end
     end
 end

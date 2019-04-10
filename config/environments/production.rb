@@ -1,21 +1,27 @@
 Rails.application.configure do
 
   #devise email info
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: "gmail.com",
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: "hideAndBeep@gmail.com",
+  #   password: "HidingAndBeeping5"
+  # }
+
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "gmail.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: "hideAndBeep@gmail.com",
-    password: "HidingAndBeeping5"
+    address: 'mail-proj.fh-salzburg.ac.at',
+    port: 25
   }
-
-
+  config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { :host => 'hide-and-beep.projects.multimediatechnology.at' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
+
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

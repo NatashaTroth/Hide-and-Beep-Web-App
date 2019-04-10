@@ -1,25 +1,37 @@
-<h2>Change your password</h2>
+<main class="main-forgot-password">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+    <section class="forgot-password__form-and-links">
+  
+    <h1 class="forgot-password__h1">Change your password</h1>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+      <div class="forgot-password__error-messages">      
+          <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+        <%= f.hidden_field :reset_password_token %>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+        <div class="field">
+          <%= f.label :password, "New password" %><br />
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <% end %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"forgot-password__input" %>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <div class="field">
+          <%= f.label :password_confirmation, "Confirm new password" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"forgot-password__input" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Change my password", class: "button forgot-password__submit-button" %>
+        </div>
+      <% end %>
+
+      <div class="forgot-password__nav-buttons">
+      <%= render "devise/shared/links" %>
+      </div>
+
+    </section>
+  </main>
