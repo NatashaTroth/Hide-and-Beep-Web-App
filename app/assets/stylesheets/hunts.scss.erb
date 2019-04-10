@@ -1,61 +1,31 @@
 @import 'variables';
 @import 'global';
 
-
 //CREATE HUNT AND EDIT
-.main-create-hunt, .main-hunts-index{
-}
-
-.create-hunt__tab-hunt{
-    background: $themeGreen;
-    margin: 0;
-    border: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    cursor: pointer;
-    width:100px;
-    height: 8vh;
-
-    font-size: 20px;
-    box-shadow:none;
-
-    &:hover{
-        transform: scale(1);    //stop button hover effect on ta
-    }
-}
-
-.selected-tab{
-    background: $cream;
- }
-
-
-.create-hunt__hunt-article{
-    background: $cream;
-    box-shadow: 3px 3px 2px #aaaaaa;  
-    display: flex;
-    flex-direction:column;
-    padding-bottom: 5vh;
-
-}
-
 .create-hunt__section{
     margin-top: 5vh;
 
     //SHOULD CHANGE THIS TO CLASSES
     form{
-       display: grid;
+        display: grid;
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
-        padding:5vh 5vw 2vh;
+        padding:3vh 3vw 3vh;
     }
 }
 
-.create-hunt__form-heading{
-    font-size: 18px;
-    margin-bottom: 2vh;
-}
-
 .create-hunt{
+    &__hunt-article {
+        background: $cream;
+        box-shadow: 3px 3px 2px #aaaaaa;  
+        display: flex;
+        flex-direction:column;
+    }
+
+    &__form-heading {
+        font-size: 18px;
+        margin-bottom: 2vh;
+    }
     
     &__div{
         display: flex;
@@ -103,39 +73,29 @@
     &__submit-button{
         grid-row: 3/4;
         grid-column: 3/4; 
-        // place-self: end normal; //grid, stop button from stretching over grid space
         align-self: end;
-        // margin-right:5vw !important;
         width:90%;
-
     }
-
 }
 
 //Back button on edit hunt page
 .edit-hunt__back-button{
-
     display: none;
     align-self: flex-end;
-     max-width: 65px;
-     text-align: center;
-     margin: auto 5vw 5vh 0;
+    max-width: 65px;
+    text-align: center;
+    margin: auto 3vw 3vh 0;
 }
 
-
-
-
-
 .hunts-index{
-
     &__section{
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa; 
         line-height: 1.6;
         padding: 2vh 2vw;
         margin-top:3vh;
-        width: 80vw
-
+        width: 80vw;
+        padding-bottom: 4vh;
     }
     
     &__titles{
@@ -143,7 +103,7 @@
         grid-template-rows: 1;
         grid-template-columns: 2fr 1fr 1fr; 
         grid-auto-flow: column;
-        justify-items: center;
+        justify-items: start;
         margin-bottom: 2vh;
     }
 
@@ -154,9 +114,9 @@
     &__list-element{
         display: grid;
         grid-template-rows: 1;
-        grid-template-columns: 2fr 1fr 0.5fr 0.5fr; 
+        grid-template-columns: 2fr 1fr 0.5fr 0.3fr; 
         grid-auto-flow: column;
-        justify-items: center;
+        justify-items: start;
         align-items: center;
     }
 

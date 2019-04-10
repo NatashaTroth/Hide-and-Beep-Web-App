@@ -1,14 +1,21 @@
 @import 'variables';
 
-.main-help{
+.main-help {
     min-height: 90vh;
 }
 
-.help-article{
-    background: $cream;
-    box-shadow: 3px 3px 2px #aaaaaa;  
-    max-width: 65ch;
-    line-height: 1.6;
-    padding: 2vh 2vw;
-    margin-top:3vh;
+.help {
+    &__article {
+        background: $cream;
+        box-shadow: 3px 3px 2px #aaaaaa;  
+        max-width: 65ch;
+        line-height: 1.6;
+        padding: 2vh 2vw;
+        margin-top:3vh;
+    }
+
+    &__h1 {
+        align-self: center;
+        margin: 0;
+    }
 }

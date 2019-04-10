@@ -1,13 +1,9 @@
-<%= render '/partials/header' %>
-
 <main class="main-create-hunt">
 <h1>Add Hint</h1>
-
     <section class="create-hint__section create-hint__section-hint">
         <article class="create-hint__hint-article">
 
         <%= render 'form', hint: @hint %>
-
         <%= link_to 'Back', hints_path(:hunt_id => @hunt_id), class: "button create-hint__back-btn" %>
 
         </article>

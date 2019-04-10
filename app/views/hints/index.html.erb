@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<%= render '/partials/header' %>
-
 <main class="main-hunts-index">
 <h1>Hints</h1>
 
@@ -32,7 +28,7 @@
 </ul>
 
 <div class="create-hint__new-hint-btn">
-<%= link_to 'Back', edit_hunt_path(Hunt.find(@hunt_id)), class: "button create-hint__backButton" %>
+<%= link_to 'Back', edit_hunt_path(Hunt.find(@hunt_id)), class: "button create-hint__backBtn-hint-overview" %>
 <%= link_to 'New Hint', new_hint_path(:hunt_id => @hunt_id), class: "button" %>
 </div>
 

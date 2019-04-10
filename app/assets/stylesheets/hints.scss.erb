@@ -1,23 +1,22 @@
 @import 'variables';
 
 // Hints Overview
-
 .create-hint {
     &__hint-article {
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;  
         width: 80vw;
-        height: 75vh;
+        height: 78vh;
     }
 
     &__section {
-        margin-top: 5vh;
+        margin-top: 3vh;
 
         form {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
-            padding:5vh 5vw 2vh;
+            grid-template-columns: repeat(1fr 0.2fr 1fr 1fr 1fr 1fr);
+            padding:3vh 4vw 2vh;
         }
     }
 
@@ -63,21 +62,20 @@
         font-size: 18px;
     }
 
-    &__back-btn {
-        margin-left: 70px;
+    &__back-btn, &__backButton {
+        margin: 4vh 4vw;
     }
-
-    &__backButton {
-        margin-right: 20px;
-    }
-
+    
     &__textarea {
         font-family: 'Sniglet', Verdana, Tahoma, sans-serif;
+    }
+
+    &__backBtn-hint-overview {
+        margin: 0 1.5vw;
     }
 }
 
 .hints-index {
-
     &__section {
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;  
@@ -90,7 +88,7 @@
     &__titles {
         display:grid;
         grid-template-rows: 1;
-        grid-template-columns: 1fr 1fr 1fr 1fr 0.27fr 0.27fr; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 0.2755fr 0.2755fr; 
         grid-auto-flow: column;
         margin-bottom: 2vh;
     }
@@ -102,7 +100,7 @@
     &__list-element {
         display: grid;
         grid-template-rows: 1;
-        grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr 0.2fr; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 0.27fr 0.27fr; 
         grid-auto-flow: column;
         align-items: center;
         justify-self: center;
@@ -129,7 +127,18 @@
     }
 }
 
+.field_with_errors {
+    padding-top: 2.4vh;
+}
+
 .field {
     display: flex;
     flex-direction: column;
+}
+
+#map {
+    padding-top: 2.5vh;
+    height: 50vh; 
+    grid-row: 2/6;
+    grid-column: 3/7;
 }

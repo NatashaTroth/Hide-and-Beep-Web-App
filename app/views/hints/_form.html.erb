@@ -18,12 +18,12 @@
 
   <div class="field create-hint__div create-hint__longitude">
     <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :longitude %>
+    <%= form.text_field :longitude, :id => 'longitude' %>
   </div>
 
   <div class="field create-hint__div create-hint__latitude">
     <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :latitude %>
+    <%= form.text_field :latitude, :id => 'latitude' %>
   </div>
 
   <div class="field create-hint__div create-hint__text">
@@ -39,4 +39,44 @@
   <div class="actions-button field create-hint__createBtn">
     <%= form.submit :class => 'button create-hint__submitBtn' %>
   </div>
+
+
+<div id="map" class="create-hint__div"></div>
 <% end %>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/>
+      
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+             integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                crossorigin=""></script>
+
+<script>
+  var map = L.map('map').setView([47.7236916, 13.086686], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  function circle(long, lat) {
+    L.circleMarker([lat, long], {radius: 1, color: 'red'}).addTo(map);
+  }
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    var lat = ""
+    var lng = ""
+
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(map);
+
+    document.getElementById('latitude').value = e.latlng.lat
+    document.getElementById('longitude').value = e.latlng.lng
+  }
+  map.on('click', onMapClick)
+</script>
