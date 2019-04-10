@@ -6,7 +6,7 @@ class HintsController < ApplicationController
   def index
     
     if hunt_param.present?
-      @hints = Hint.all.where("hunt_id = " + hunt_param)
+      @hints = Hint.all.where("hunt_id = " + hunt_param).order(:order)
       @hunt_id = hunt_param
     else
       redirect_to home_path
