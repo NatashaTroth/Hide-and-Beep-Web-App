@@ -5,44 +5,46 @@ class HuntsControllerTest < ActionDispatch::IntegrationTest
     @hunt = hunts(:one)
   end
 
-  test "should get index" do
+  #should be redirected, since user is not logged in
+
+  test "should not get index" do
     get hunts_url
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should get new" do
+  test "should not get new" do
     get new_hunt_url
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should create hunt" do
-    assert_difference('Hunt.count') do
+  test "should not create hunt" do
+    assert_no_difference('Hunt.count') do
       post hunts_url, params: { hunt: { expiry_date: @hunt.expiry_date, name: @hunt.name, no_time_limit: @hunt.no_time_limit, set_time_limit: @hunt.set_time_limit, start_date: @hunt.start_date, winning_code: @hunt.winning_code } }
     end
 
-    assert_redirected_to hunt_url(Hunt.last)
-  end
+    assert_redirected_to new_user_session_path
+   end
 
-  test "should show hunt" do
+  test "should not show hunt" do
     get hunt_url(@hunt)
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should get edit" do
+  test "should not get edit" do
     get edit_hunt_url(@hunt)
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should update hunt" do
+  test "should not update hunt" do
     patch hunt_url(@hunt), params: { hunt: { expiry_date: @hunt.expiry_date, name: @hunt.name, no_time_limit: @hunt.no_time_limit, set_time_limit: @hunt.set_time_limit, start_date: @hunt.start_date, winning_code: @hunt.winning_code } }
-    assert_redirected_to hunt_url(@hunt)
+    assert_redirected_to new_user_session_path
   end
 
-  test "should destroy hunt" do
-    assert_difference('Hunt.count', -1) do
+  test "should not destroy hunt" do
+    assert_no_difference('Hunt.count') do
       delete hunt_url(@hunt)
     end
 
-    assert_redirected_to hunts_url
+    assert_redirected_to new_user_session_path
   end
 end
