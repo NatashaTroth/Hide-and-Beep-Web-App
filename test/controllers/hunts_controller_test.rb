@@ -87,24 +87,34 @@ class HuntsControllerUserTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # #WORKS - BUT NEED TO GET ID
   test "should create hunt" do
     assert_difference('Hunt.count') do
       post hunts_url, params: { hunt: { expiry_date: @hunt.expiry_date, name: "newNameToAvoidUniqueConstraint", no_time_limit: @hunt.no_time_limit, set_time_limit: @hunt.set_time_limit, start_date: @hunt.start_date, winning_code: @hunt.winning_code } }
     end
    end
+   
 
+  test "should show hunt" do
+    get hunt_url(@hunt)
+    assert_response :success
+  end
 
+  test "should get edit" do
+    get edit_hunt_url(@hunt)
+    assert_response :success
+  end
+
+  # test "should update hunt" do
+  #   patch hunt_url(@hunt), params: { hunt: { expiry_date: @hunt.expiry_date, name: @hunt.name, no_time_limit: @hunt.no_time_limit, set_time_limit: @hunt.set_time_limit, start_date: @hunt.start_date, winning_code: @hunt.winning_code } }
+  #   assert_redirected_to controller: "hints", action: "index"
+  # end
+
+  test "should destroy hunt" do
+    assert_difference('Hunt.count', -1) do
+      delete hunt_url(@hunt)
+    end
+
+    assert_redirected_to hunts_url
+  end
 
 end
-
-# class HuntsControllerUserTest < ActionController::TestCase
-#   include Devise::Test::ControllerHelpers
-
-#   test 'authenticated users can GET index' do
-#     sign_in users(:one)
-
-#     get :index
-#     assert_response :success
-#   end
-# end
