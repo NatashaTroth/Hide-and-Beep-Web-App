@@ -19,6 +19,9 @@ class HuntsController < ApplicationController
 
   # GET /hunts/1/edit
   def edit
+    if hunt_param.present?
+      @hunt_id = hunt_param
+    end
   end
 
   # POST /hunts
@@ -28,7 +31,7 @@ class HuntsController < ApplicationController
 
     respond_to do |format|
       if @hunt.save
-        format.html { redirect_to new_hint_path(hunt_id: @hunt.id), notice: 'Hunt was successfully created.' }
+        format.html { redirect_to hints_path(hunt_id: @hunt.id), notice: 'Hunt was successfully created.' }
         format.json { render :show, status: :created, location: @hunt }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class HuntsController < ApplicationController
   def update
     respond_to do |format|
       if @hunt.update(hunt_params)
-        format.html { redirect_to @hunt, notice: 'Hunt was successfully updated.' }
+        format.html { redirect_to hints_path(hunt_id: @hunt.id), notice: 'Hunt was successfully updated.' }
         format.json { render :show, status: :ok, location: @hunt }
       else
         format.html { render :edit }
@@ -70,5 +73,11 @@ class HuntsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hunt_params
       params.require(:hunt).permit(:name, :start_date, :expiry_date, :set_time_limit, :no_time_limit, :winning_code)
+    end
+
+    def hunt_param
+      if params.has_key?(:hunt_id)
+        params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+      end
     end
 end

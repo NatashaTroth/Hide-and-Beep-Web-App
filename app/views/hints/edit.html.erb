@@ -1,6 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= render '/partials/header' %>
+
+<main class="main-hunts-index">
 <h1>Editing Hint</h1>
 
+<section class="create-hint__section create-hint__section-hint">
+
+<article class="create-hint__hint-article">
 <%= render 'form', hint: @hint %>
 
-<%= link_to 'Show', @hint %> |
-<%= link_to 'Back', hints_path %>
+<%= link_to 'Back', hints_path, class: "button create-hint__back-btn" %>
+</article>
+</section>
+
+</main>
