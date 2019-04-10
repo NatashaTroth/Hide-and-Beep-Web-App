@@ -4,7 +4,7 @@ class HintsController < ApplicationController
   # GET /hints
   # GET /hints.json
   def index
-    @hints = Hint.all.where("hunt_id = " + hunt_param)
+    @hints = Hint.all.where("hunt_id = " + hunt_param).order(:order)
     @hunt_id = hunt_param
   end
 
