@@ -15,14 +15,11 @@
     margin-top:10vh;
     display: flex;
     flex-direction: column;
-    // width: 300px;
-
-
-
+ 
     &__list-element{
         margin: 2vh auto;
-        display: block !important;
-        
+        display: flex;
+        justify-content: center;
         
         &:hover{
             transform: scale(1.05);
@@ -30,9 +27,16 @@
     }
 
     &__button{
-        text-decoration: none !important;
-        text-align: center !important; 
+        text-decoration: none; 
         color: black;
-        display: block;
+        display: flex;
+        justify-content: center;
     }
+
+    @media screen and (max-width: 400px) {
+    &__button{
+        text-align: center;
+        width: 60vw;
+    }
+}
 }
