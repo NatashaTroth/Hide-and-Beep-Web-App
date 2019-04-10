@@ -59,7 +59,7 @@ class HintsController < ApplicationController
   def destroy
     @hint.destroy
     respond_to do |format|
-      format.html { redirect_to hints_url, notice: 'Hint was successfully destroyed.' }
+      format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
