@@ -48,8 +48,7 @@ class HintsController < ApplicationController
         format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully updated.' }
         format.json { render :show, status: :ok, location: @hint }
       else
-        
-        format.html { render :edit } # plain: hints_path(hunt_id: @hint.hunt_id
+        format.html { render :edit }
         format.json { render json: @hint.errors, status: :unprocessable_entity }
       end
     end
@@ -73,7 +72,7 @@ class HintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hint_params
-      params.require(:hint).permit(:longitude, :latitude, :text, :hunt_id)
+      params.require(:hint).permit(:order, :longitude, :latitude, :text, :hunt_id)
     end
 
     def hunt_param
