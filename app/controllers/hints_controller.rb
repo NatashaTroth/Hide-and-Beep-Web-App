@@ -21,6 +21,7 @@ class HintsController < ApplicationController
 
   # GET /hints/1/edit
   def edit
+    @hunt_id = hunt_param
   end
 
   # POST /hints

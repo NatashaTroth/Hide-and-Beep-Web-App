@@ -19,6 +19,9 @@ class HuntsController < ApplicationController
 
   # GET /hunts/1/edit
   def edit
+    if hunt_param.present?
+      @hunt_id = hunt_param
+    end
   end
 
   # POST /hunts
@@ -70,5 +73,11 @@ class HuntsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hunt_params
       params.require(:hunt).permit(:name, :start_date, :expiry_date, :set_time_limit, :no_time_limit, :winning_code)
+    end
+
+    def hunt_param
+      if params.has_key?(:hunt_id)
+        params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+      end
     end
 end
