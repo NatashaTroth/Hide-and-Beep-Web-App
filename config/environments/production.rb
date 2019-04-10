@@ -11,7 +11,10 @@ Rails.application.configure do
     password:ENV["GMAIL_PASSWORD"]
   }
 
+
   config.action_mailer.default_url_options = { :host => 'hide-and-beep.projects.multimediatechnology.at' }
+config.action_mailer.delivery_method = :smtp
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 
