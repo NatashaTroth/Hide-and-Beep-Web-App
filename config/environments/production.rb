@@ -7,8 +7,8 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: hideAndBeep@gmail.com,
-    password: HidingAndBeeping5
+    user_name: "hideAndBeep@gmail.com",
+    password: "HidingAndBeeping5"
   }
 
 
