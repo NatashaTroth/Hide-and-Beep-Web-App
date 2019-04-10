@@ -1,6 +1,7 @@
 class CreateHints < ActiveRecord::Migration[5.2]
   def change
     create_table :hints do |t|
+      t.integer :order
       t.decimal :longitude
       t.decimal :latitude
       t.text :text
