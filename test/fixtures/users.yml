@@ -6,11 +6,11 @@
 #
 one: 
     email: "test@test.at"
-    encrypted_password: "kljsdif"
+    encrypted_password: "aSecret"
 # column: value
 #
 two: 
     email: "another@test.at"
-    encrypted_password: "kljsdaSecretif"
+    encrypted_password: "anotherSecret"
 # column: value
 
