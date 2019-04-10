@@ -10,7 +10,7 @@
 <article class="create-hint__hint-article">
 <%= render 'form', hint: @hint %>
 
-<%= link_to 'Back', hints_path, class: "button create-hint__back-btn" %>
+<%= link_to 'Back', hints_path(:hunt_id => @hunt_id), class: "button create-hint__back-btn" %>
 </article>
 </section>
 

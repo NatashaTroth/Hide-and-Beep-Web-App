@@ -19,7 +19,7 @@
     <p class="hints-index__longitude"><%= hint.longitude %></p>
     <p class="hints-index__latitude"><%= hint.latitude %></p>
     <p class="hints-index__text"><%= hint.text %></p>
-    <p class="hints-index__id"><%= hint.id %></p>
+    <!--<p class="hints-index__id"><%= hint.id %></p>-->
     <!--<p><%= hint.hunt_id %></p>-->
     <%= link_to image_tag('editBtn.svg'), edit_hint_path(hint, :hunt_id => @hunt_id), class: "hints-index__edit-button" %>
     <%= link_to image_tag('deleteBtn.svg'), hint, method: :delete, data: { confirm: 'Are you sure?' }, class: "hints-index__delete-button" %>

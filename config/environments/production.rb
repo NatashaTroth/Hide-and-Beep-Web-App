@@ -1,4 +1,4 @@
-wRails.application.configure do
+Rails.application.configure do
 
   #devise email info
   config.action_mailer.smtp_settings = {
