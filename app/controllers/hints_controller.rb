@@ -4,7 +4,8 @@ class HintsController < ApplicationController
   # GET /hints
   # GET /hints.json
   def index
-    @hints = Hint.all
+    @hints = Hint.all.where("hunt_id = " + hunt_param)
+    @hunt_id = hunt_param
   end
 
   # GET /hints/1
@@ -20,6 +21,7 @@ class HintsController < ApplicationController
 
   # GET /hints/1/edit
   def edit
+    @hunt_id = hunt_param
   end
 
   # POST /hints
@@ -29,7 +31,7 @@ class HintsController < ApplicationController
 
     respond_to do |format|
       if @hint.save
-        format.html { redirect_to @hint, notice: 'Hint was successfully created.' }
+        format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully created.' }
         format.json { render :show, status: :created, location: @hint }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class HintsController < ApplicationController
   def update
     respond_to do |format|
       if @hint.update(hint_params)
-        format.html { redirect_to @hint, notice: 'Hint was successfully updated.' }
+        format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully updated.' }
         format.json { render :show, status: :ok, location: @hint }
       else
         format.html { render :edit }
@@ -57,7 +59,7 @@ class HintsController < ApplicationController
   def destroy
     @hint.destroy
     respond_to do |format|
-      format.html { redirect_to hints_url, notice: 'Hint was successfully destroyed.' }
+      format.html { redirect_to hints_path(hunt_id: @hint.hunt_id), notice: 'Hint was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +76,6 @@ class HintsController < ApplicationController
     end
 
     def hunt_param
-        params.require(:hunt_id)
+      params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
     end
 end
