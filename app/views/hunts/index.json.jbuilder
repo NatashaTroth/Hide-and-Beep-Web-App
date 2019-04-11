@@ -1,1 +1,3 @@
-json.array! @hunts, partial: 'hunts/hunt', as: :hunt
+json.array! @hunts do |hunt|
+    json.extract! hunt, :id, :name
+end
