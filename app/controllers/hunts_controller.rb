@@ -6,7 +6,8 @@ class HuntsController < ApplicationController
   # GET /hunts
   # GET /hunts.json
   def index
-    @hunts = Hunt.all
+    #@hunts = Hunt.all.order(:start_date)
+   @hunts = Hunt.paginate(page: params[:page])
   end
 
   # GET /hunts/1
@@ -79,7 +80,7 @@ class HuntsController < ApplicationController
 
     def hunt_param
       if params.has_key?(:hunt_id)
-        params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+        params.require(:hunt_id)
       end
     end
 
