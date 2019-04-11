@@ -5,6 +5,7 @@
 <p class="hints-index__instructions"> *Drag and drop your hints for this Scavenger hunt. </p>
 
 <div class="hints-index__titles">
+<h2 class="hints-index__title-number">Hint number:</h2>
 <h2 class="hints-index__title-order">Hint location:</h2>
 <h2 class="hints-index__title-location-name">Hint text:</h2>
 </div>
@@ -13,9 +14,10 @@
 <div id="hints" class="list-group ui-sortable" data-url="<%= sort_hints_path %>">
 <% @hints.each do |hint| %>
   <li class="hints-index__list-element" id=<%= dom_id(hint) %>>
+    <p class="hints-index__hint-position"><%= hint.position %>.</p>
     <p class="hints-index__location-name"><%= hint.location_name %></p>
-    <p class="hints-index__order"><%= hint.text %></p>
-
+    <p class="hints-index__text"><%= hint.text %></p>
+    
     <%= link_to image_tag('editBtn.svg'), edit_hint_path(hint, :hunt_id => @hunt_id), class: "hints-index__edit-button" %>
     <%= link_to image_tag('deleteBtn.svg'), hint, method: :delete, data: { confirm: 'Are you sure?' }, class: "hints-index__delete-button" %>
     </li>  
