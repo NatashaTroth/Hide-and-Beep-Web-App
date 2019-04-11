@@ -8,11 +8,9 @@ class Hunt < ApplicationRecord
     validates :start_date,
     date: { after_or_equal_to: Proc.new { Date.today }, message: 'cannot be in the past' },
     on: :create
-    
+
     #Validate that expiry_date is not before start_date
     validates :expiry_date,
           date: { after_or_equal_to: :start_date, message: 'cannot be before the start date'  }
-
-    
 
 end
