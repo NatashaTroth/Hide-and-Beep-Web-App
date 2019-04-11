@@ -1,38 +1,10 @@
 
 <main class="main-create-hunt">
-        <h1>Create Scavenger Hunt</h1>
-        <section class="create-hunt__section create-hunt__section-hunt">
-            <article class="js-article-hunt create-hunt__hunt-article">
-                <%= render 'form', hunt: @hunt %>
+    <h1>Create Scavenger Hunt</h1>
+    <section class="create-hunt__section create-hunt__section-hunt">
+        <article class="js-article-hunt create-hunt__hunt-article">
+            <%= render 'form', hunt: @hunt %>
 
-            </article>
-        </section>
-    </main>
-<!-- 
-<% content_for :javascript_includes do %>
-    <script>
-    //     let noTimeLimitCheckbox = document.querySelector(".js-hunt-form-no-time-limit-checkbox")
-    // let setTimeLimitInputDiv = document.querySelector(".js-hunt-form-set-time-limit")
-
-    // console.log("Arrived " + noTimeLimitCheckbox)
-    // if(noTimeLimitCheckbox != null){
-    //     //for first load and reload
-    //     noTimeLimitCheckbox.addEventListener("click", toggleSetTimeLimit)
-    //     toggleSetTimeLimit()
-    // }
-
-
-    // function toggleSetTimeLimit(){
-    //     console.log("HERE")
-    //     if(noTimeLimitCheckbox.checked){
-    //         setTimeLimitInputDiv.classList.add("visibility-hidden")
-    //         setTimeLimitInputDiv.classList.remove("visibility-visible")
-
-    //     }
-    //     else{
-    //         setTimeLimitInputDiv.classList.add("visibility-visible")
-    //         setTimeLimitInputDiv.classList.remove("visibility-hidden")
-    //     }
-    // } 
-    </script>
-<% end %> -->
+        </article>
+    </section>
+</main>
