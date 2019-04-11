@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2019_04_11_150805) do
 
   create_table "hunts", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_date"
-    t.datetime "expiry_date"
+    t.date "start_date"
+    t.date "expiry_date"
     t.time "set_time_limit", default: "2000-01-01 00:00:00"
     t.boolean "no_time_limit", default: false
     t.string "winning_code"

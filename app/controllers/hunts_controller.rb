@@ -6,7 +6,8 @@ class HuntsController < ApplicationController
   # GET /hunts
   # GET /hunts.json
   def index
-    @hunts = Hunt.all
+    #@hunts = Hunt.all.order(:start_date)
+   @hunts = Hunt.order(:updated_at).page(params[:page])
   end
 
   # GET /hunts/1

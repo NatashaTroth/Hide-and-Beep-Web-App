@@ -11,7 +11,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'date_validator'
+gem 'kaminari'
 # for mailing
 gem 'dotenv-rails'
 
