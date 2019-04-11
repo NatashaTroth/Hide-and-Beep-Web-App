@@ -6,15 +6,15 @@
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;  
         width: 80vw;
-        height: 90vh;
+        height: 93vh;
     }
 
     &__section {
-        margin-top: 3vh;
+        padding: 40px;
 
         form {
             display: grid;
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
             grid-template-columns: repeat(1fr 0.2fr 1fr 1fr 1fr 1fr);
             padding:3vh 4vw 2vh;
         }
@@ -22,7 +22,6 @@
 
     &__form-heading {
         font-size: 18px;
-        margin-bottom: 2vh;
     }
 
     &__location-name {
@@ -62,8 +61,6 @@
     }
 
     &__inputfield {
-        padding-top: 20px;
-        line-height: 20px;
         font-size: 18px;
     }
 
@@ -77,6 +74,10 @@
 
     &__backBtn-hint-overview {
         margin: 0 1.5vw;
+    }
+
+    &__style-textarea {
+        margin-top: 10px;
     }
 }
 
@@ -137,18 +138,14 @@
     }
 }
 
-.field_with_errors {
-    padding-top: 2.4vh;
-}
-
 .field {
     display: flex;
     flex-direction: column;
 }
 
 #map {
-    padding-top: 2.5vh;
+    padding-top: 3.5vh;
     height: 50vh; 
     grid-row: 2/6;
-    grid-column: 3/7;
+    grid-column: 3/8;
 }
