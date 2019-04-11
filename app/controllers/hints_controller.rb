@@ -4,13 +4,21 @@ class HintsController < ApplicationController
   # GET /hints
   # GET /hints.json
   def index
-    
     if hunt_param.present?
-      @hints = Hint.all.where("hunt_id= " + hunt_param).order(:order)
+      @hints = Hint.all.where("hunt_id= " + hunt_param).order(:position)
       @hunt_id = hunt_param
     else
       redirect_to home_path
     end
+  end
+
+  def sort
+    if params[:hint].present?
+    params[:hint].each_with_index do | id, index |
+      Hint.where(id: id).update_all(position: index + 1)
+    end
+    end
+    head :ok
   end
 
   # GET /hints/1

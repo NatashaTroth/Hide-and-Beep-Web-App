@@ -10,16 +10,17 @@
 </div>
 
 <ul>
+<div id="hints" class="list-group ui-sortable" data-url="<%= sort_hints_path %>">
 <% @hints.each do |hint| %>
-  <li class="hints-index__list-element">
+  <li class="hints-index__list-element" id=<%= dom_id(hint) %>>
     <p class="hints-index__order"><%= hint.order %></p>
     <p class="hints-index__location-name"><%= hint.location_name %></p>
-
 
     <%= link_to image_tag('editBtn.svg'), edit_hint_path(hint, :hunt_id => @hunt_id), class: "hints-index__edit-button" %>
     <%= link_to image_tag('deleteBtn.svg'), hint, method: :delete, data: { confirm: 'Are you sure?' }, class: "hints-index__delete-button" %>
     </li>  
 <% end %>
+</div>
 </ul>
 
 <div class="create-hint__new-hint-btn">

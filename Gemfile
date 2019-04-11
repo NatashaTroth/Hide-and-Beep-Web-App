@@ -18,7 +18,13 @@ gem 'dotenv-rails'
 # relevant for login
 gem 'devise'
 
+# map
 gem 'leaflet-rails'
+
+# drag and drop for hints overview
+gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'acts_as_list'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
