@@ -22,6 +22,7 @@
 <% end %>
 </ul>
 
+<%= paginate @hints %>
 <div class="create-hint__new-hint-btn">
 <%= link_to 'Back', edit_hunt_path(Hunt.find(@hunt_id)), class: "button create-hint__backBtn-hint-overview" %>
 <%= link_to 'New Hint', new_hint_path(:hunt_id => @hunt_id), class: "button" %>
