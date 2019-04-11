@@ -57,14 +57,21 @@
   let lat = document.getElementById('latitude').value
   let lng = document.getElementById('longitude').value
 
+  if (lat.length == 0 && lng.length == 0) {
+    // set default value if user want to add a new hint -> default value: position of FH Salzburg
+    lat = 47.723730
+    lng = 13.086596
+  }
+
   var map = L.map('map').setView([lat, lng], 13);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
+  // set edit hint location in
   L.marker([lat, lng]).addTo(map)
-    .bindPopup('Current hint ' + lat + ', ' + lng)
+    .bindPopup(`Current hint: ${lat}, ${lng}`)
     .openPopup();
 
 var popup = L.popup();
