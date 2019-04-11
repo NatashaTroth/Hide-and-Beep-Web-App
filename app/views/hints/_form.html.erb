@@ -13,22 +13,22 @@
 
   <div class="field create-hint__div create-hint__order">
     <%= form.label :order, "Hint number", :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :order %>
+    <%= form.text_field :order, :class => 'create-hint__textarea', placeholder: "e.g. 1" %>
   </div>
 
   <div class="field create-hint__div create-hint__latitude">
   <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-  <%= form.text_field :latitude, :id => 'latitude' %>
+  <%= form.text_field :latitude, :class => 'create-hint__textarea', :id => 'latitude', placeholder: "e.g. 47.72373" %>
   </div>
 
   <div class="field create-hint__div create-hint__longitude">
     <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :longitude, :id => 'longitude' %>
+    <%= form.text_field :longitude, :class => 'create-hint__textarea', :id => 'longitude', placeholder: "e.g. 13.086596" %>
   </div>
 
   <div class="field create-hint__div create-hint__text">
-    <%= form.label :text, :class => 'create-hint__inputfield' %>
-    <%= form.text_area :text, :class => 'create-hint__textarea create-hunt__form-heading' %>
+    <%= form.label :text, "Hint text", :class => 'create-hint__inputfield' %>
+    <%= form.text_area :text, :class => 'create-hint__textarea create-hunt__form-heading', placeholder: "e.g. You will find the next clue in a place..." %>
   </div>
 
   <div class="field hidden">
