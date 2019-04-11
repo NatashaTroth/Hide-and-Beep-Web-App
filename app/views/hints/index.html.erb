@@ -1,19 +1,19 @@
 <main class="main-hunts-index">
-<h1>Hints</h1>
+<h1 class="hints-index__h1">Hints</h1>
 
 <section class="hints-index__section">
 <p class="hints-index__instructions"> *The hint number represents the order of the hints in this Scavenger hunt. </p>
 
 <div class="hints-index__titles">
 <h2 class="hints-index__title-order">Hint number:</h2>
-<h2 class="hints-index__title-text">Text:</h2>
+<h2 class="hints-index__title-location-name">Hint location:</h2>
 </div>
 
 <ul>
 <% @hints.each do |hint| %>
   <li class="hints-index__list-element">
     <p class="hints-index__order"><%= hint.order %></p>
-    <p class="hints-index__text"><%= hint.text %></p>
+    <p class="hints-index__location-name"><%= hint.location_name %></p>
 
     <%= link_to image_tag('editBtn.svg'), edit_hint_path(hint, :hunt_id => @hunt_id), class: "hints-index__edit-button" %>
     <%= link_to image_tag('deleteBtn.svg'), hint, method: :delete, data: { confirm: 'Are you sure?' }, class: "hints-index__delete-button" %>

@@ -16,6 +16,11 @@
     <%= form.text_field :order, :class => 'create-hint__textarea', placeholder: "e.g. 1" %>
   </div>
 
+  <div class="field create-hint__div create-hint__location-name">
+    <%= form.label :location_name, "Hint location", :class => 'create-hint__inputfield create-hunt__form-heading' %>
+    <%= form.text_field :location_name, :class => 'create-hint__textarea', placeholder: "e.g. Behind a tree..." %>
+  </div>
+
   <div class="field create-hint__div create-hint__latitude">
   <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
   <%= form.text_field :latitude, :class => 'create-hint__textarea', :id => 'latitude', placeholder: "e.g. 47.72373" %>
