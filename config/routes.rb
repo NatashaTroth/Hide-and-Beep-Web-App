@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       :passwords => "passwords"
 
     }
-  resources :hints
+  resources :hints, :except => [:show]
   resources :hunts
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
