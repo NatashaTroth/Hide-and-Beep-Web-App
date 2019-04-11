@@ -2,8 +2,9 @@ class CreateHints < ActiveRecord::Migration[5.2]
   def change
     create_table :hints do |t|
       t.integer :order
-      t.decimal :longitude
+      t.string :location_name
       t.decimal :latitude
+      t.decimal :longitude
       t.text :text
       t.integer :hunt_id, foreign_key: true
 

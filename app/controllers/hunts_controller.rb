@@ -1,3 +1,5 @@
+require 'digest'
+
 class HuntsController < ApplicationController
   before_action :set_hunt, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +30,7 @@ class HuntsController < ApplicationController
   # POST /hunts.json
   def create
     @hunt = Hunt.new(hunt_params)
-
+    @hunt.authentification_key = create_authentification_key(@hunt.name)
     respond_to do |format|
       if @hunt.save
         format.html { redirect_to hints_path(hunt_id: @hunt.id), notice: 'Hunt was successfully created.' }
@@ -79,5 +81,11 @@ class HuntsController < ApplicationController
       if params.has_key?(:hunt_id)
         params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
       end
+    end
+
+    def create_authentification_key(hunt_name)
+      #modified from https://stackoverflow.com/a/88341
+      o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
+      (0...10).map { o[rand(o.length)] }.join
     end
 end

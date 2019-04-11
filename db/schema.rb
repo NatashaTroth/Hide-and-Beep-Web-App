@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 2019_04_08_151931) do
 
   create_table "hints", force: :cascade do |t|
     t.integer "order"
-    t.decimal "longitude"
+    t.string "location_name"
     t.decimal "latitude"
+    t.decimal "longitude"
     t.text "text"
     t.integer "hunt_id"
     t.datetime "created_at", null: false
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_151931) do
     t.time "set_time_limit", default: "2000-01-01 00:00:00"
     t.boolean "no_time_limit", default: false
     t.string "winning_code"
+    t.string "authentification_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
