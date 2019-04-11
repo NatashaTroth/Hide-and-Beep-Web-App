@@ -30,11 +30,11 @@
     <%= form.label :expiry_date, class: 'create-hunt__form-heading' %>
     <%= form.date_field :expiry_date %>
   </div>
-  
+
 
   
   <div class="create-hunt__time-limit create-hunt__div js-hunt-form-set-time-limit visibility-visible">
-    <%= form.label "Set time limit (hh:mm)", class: 'create-hunt__form-heading ' %>
+    <%= form.label "set_time_limit", "Set time limit (hh:mm)", class: 'create-hunt__form-heading' %>
     <%= form.time_field :set_time_limit, value: "00:00" %>
   </div>
   
