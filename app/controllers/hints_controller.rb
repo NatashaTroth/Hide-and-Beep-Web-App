@@ -15,8 +15,8 @@ class HintsController < ApplicationController
 
   # GET /hints/1
   # GET /hints/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /hints/new
   def new
