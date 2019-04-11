@@ -23,12 +23,12 @@
 
   <div class="field create-hint__div create-hint__latitude">
   <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-  <%= form.text_field :latitude, :class => 'create-hint__textarea', :id => 'latitude', placeholder: "e.g. 47.72373" %>
+  <%= form.text_field :latitude, :class => 'create-hint__textarea', :id => 'hint_latitude', placeholder: "e.g. 47.72373" %>
   </div>
 
   <div class="field create-hint__div create-hint__longitude">
-    <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :longitude, :class => 'create-hint__textarea', :id => 'longitude', placeholder: "e.g. 13.086596" %>
+  <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
+  <%= form.text_field :longitude, :class => 'create-hint__textarea', :id => 'hint_longitude', placeholder: "e.g. 13.086596" %>
   </div>
 
   <div class="field create-hint__div create-hint__text">
@@ -37,7 +37,6 @@
   </div>
 
   <div class="field hidden">
-    <%= form.label :hunt_id %>
     <%= form.hidden_field :hunt_id %>
   </div>
 
@@ -59,8 +58,8 @@
                 crossorigin=""></script>
 
 <script>
-  let lat = document.getElementById('latitude').value
-  let lng = document.getElementById('longitude').value
+  let lat = document.getElementById('hint_latitude').value
+  let lng = document.getElementById('hint_longitude').value
 
   if (lat.length == 0 && lng.length == 0) {
     // set default value if user want to add a new hint -> default value: position of FH Salzburg
@@ -90,8 +89,8 @@ function onMapClick(e) {
 			.setContent("You clicked the map at " + e.latlng.toString())
       .openOn(map);
 
-    document.getElementById('latitude').value = e.latlng.lat
-    document.getElementById('longitude').value = e.latlng.lng
+    document.getElementById('hint_latitude').value = e.latlng.lat
+    document.getElementById('hint_longitude').value = e.latlng.lng
   }
   map.on('click', onMapClick)
 </script>

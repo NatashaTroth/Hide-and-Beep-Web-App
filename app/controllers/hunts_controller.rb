@@ -79,7 +79,7 @@ class HuntsController < ApplicationController
 
     def hunt_param
       if params.has_key?(:hunt_id)
-        params.require(:hunt_id) # !!!! WICHTIG PERMIT!!!!
+        params.require(:hunt_id)
       end
     end
 
