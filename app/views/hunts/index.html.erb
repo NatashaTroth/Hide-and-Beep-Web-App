@@ -4,6 +4,7 @@
         <section class="hunts-index__section">
           <div class="hunts-index__titles">
               <h2 class="hunts-index__title-name">Name:</h2>
+              <h2>Authentification key (to send players):</h2>
               <h2>Start date:</h2>
           </div>
           <ul>
@@ -11,6 +12,8 @@
             <% @hunts.each do |hunt| %>
               <li class="hunts-index__list-element">
                   <p class="hunts-index__hunt-name"><%= hunt.name %></p>
+                  <p><%= hunt.authentification_key %></p>
+
                   <p><%= hunt.start_date.to_date %></p>
                   <%= link_to image_tag('editBtn.svg', alt: "Edit button"),  edit_hunt_path(hunt), class: "hunts-index__edit-button" %>
                   <%= link_to image_tag('deleteBtn.svg', alt: "Delete button"),  hunt, method: :delete, data: { confirm: 'Are you sure?' }, class: "hunts-index__delete-button" %>
