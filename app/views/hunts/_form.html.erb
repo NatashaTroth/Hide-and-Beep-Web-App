@@ -13,12 +13,12 @@
 
   <div class="create-hunt__name create-hunt__div">
     <%= form.label :name, class: 'create-hunt__form-heading' %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name,  :maxlength => 30, placeholder: "Easter egg hunt" %>
   </div>
 
   <div class="create-hunt__code create-hunt__div">
-      <%= form.label :winning_code, class: 'create-hunt__form-heading' %>
-      <%= form.text_field :winning_code %>
+      <%= form.label :winning_code, "Winning treasure code", class: 'create-hunt__form-heading' %>
+      <%= form.text_field :winning_code,  :maxlength => 20, placeholder: "e.g. CongratsWinner124"  %>
     </div>
   
   <div class="create-hunt__start-date create-hunt__div">
@@ -33,7 +33,7 @@
   
 
   
-  <div class="create-hunt__time-limit create-hunt__div js-hunt-form-set-time-limit visibility-hidden">
+  <div class="create-hunt__time-limit create-hunt__div js-hunt-form-set-time-limit visibility-visible">
     <%= form.label "Set time limit (hh:mm)", class: 'create-hunt__form-heading ' %>
     <%= form.time_field :set_time_limit, value: "00:00" %>
   </div>
@@ -46,3 +46,4 @@
   <%= form.submit "Save Hunt and add Hints", :class => 'button create-hunt__submit-button' %>
 
   <% end %>
+

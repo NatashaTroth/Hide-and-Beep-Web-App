@@ -3,6 +3,9 @@ class Hunt < ApplicationRecord
     validates :name, :start_date, :expiry_date, :winning_code, :authentification_key, presence: true
     validates :name, uniqueness: true 
     validates :start_date, :expiry_date, date: true 
+    validates :name, length: {maximum: 30}
+    validates :winning_code, length: {maximum: 20}
+
     
     #Validate that start_date is not in the past
     validates :start_date,
