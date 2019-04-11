@@ -6,8 +6,8 @@
 
 <div class="hints-index__titles">
 <h2 class="hints-index__title-order">Hint number:</h2>
-<h2 class="hints-index__title-longitude">Longitude:</h2>
 <h2 class="hints-index__title-latitude">Latitude:</h2>
+<h2 class="hints-index__title-longitude">Longitude:</h2>
 <h2 class="hints-index__title-text">Text:</h2>
 <!--<h2>Hunt:</h2>-->
 </div>
@@ -16,8 +16,8 @@
 <% @hints.each do |hint| %>
   <li class="hints-index__list-element">
     <p class="hints-index__order"><%= hint.order %></p>
-    <p class="hints-index__longitude"><%= hint.longitude %></p>
     <p class="hints-index__latitude"><%= hint.latitude %></p>
+    <p class="hints-index__longitude"><%= hint.longitude %></p>
     <p class="hints-index__text"><%= hint.text %></p>
     <!--<p class="hints-index__id"><%= hint.id %></p>-->
     <!--<p><%= hint.hunt_id %></p>-->

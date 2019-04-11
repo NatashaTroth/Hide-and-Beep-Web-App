@@ -16,14 +16,14 @@
     <%= form.text_field :order %>
   </div>
 
+  <div class="field create-hint__div create-hint__latitude">
+  <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
+  <%= form.text_field :latitude, :id => 'latitude' %>
+  </div>
+
   <div class="field create-hint__div create-hint__longitude">
     <%= form.label :longitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
     <%= form.text_field :longitude, :id => 'longitude' %>
-  </div>
-
-  <div class="field create-hint__div create-hint__latitude">
-    <%= form.label :latitude, :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :latitude, :id => 'latitude' %>
   </div>
 
   <div class="field create-hint__div create-hint__text">
@@ -54,15 +54,18 @@
                 crossorigin=""></script>
 
 <script>
-  var map = L.map('map').setView([47.7236916, 13.086686], 13);
+  let lat = document.getElementById('latitude').value
+  let lng = document.getElementById('longitude').value
+
+  var map = L.map('map').setView([lat, lng], 13);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  function circle(long, lat) {
-    L.circleMarker([lat, long], {radius: 1, color: 'red'}).addTo(map);
-  }
+  L.marker([lat, lng]).addTo(map)
+    .bindPopup('Current hint ' + lat + ', ' + lng)
+    .openPopup();
 
 var popup = L.popup();
 
