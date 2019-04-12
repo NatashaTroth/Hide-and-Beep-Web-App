@@ -13,7 +13,7 @@ class HuntsController < ApplicationController
   #new Action for api -> because of pagination - to get all hunts not just 5 from that page
   def indexJson
    @hunts = Hunt.order(:updated_at)
-
+   
   end
 
   # GET /hunts/1
