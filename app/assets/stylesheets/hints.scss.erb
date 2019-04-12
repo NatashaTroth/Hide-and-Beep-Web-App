@@ -99,6 +99,10 @@
         margin-bottom: 2vh;
     }
 
+    &__title-number, &__title-order, &__hint-position, &__location-name {
+        padding: 10px;
+    }
+
     &__title-longitude {
         justify-self: start;
     }
@@ -112,12 +116,8 @@
         justify-self: start;
     }
 
-    &__position {
-        height: 2vh;
-        box-shadow: none;
-        display: inline-flex;
-        align-items: center; 
-        justify-self: start;
+    &__hint-position {
+        padding: 2px;
     }
 
     &__save-hint-num {
@@ -158,3 +158,42 @@
     margin: 10px;
     padding: 15px;
 }
+
+@media screen and (max-width: 382px) {
+    .hints-index__h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .create-hint__section{
+        form{
+            display:initial;
+        }
+    }
+
+    .create-hint{
+        &__hint-article {
+            padding: 20px;
+            height: 122vh;
+        }
+
+        &__form-heading {
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        &__no-time-limit{
+            margin-top:10px;
+            justify-content: flex-start;
+        }
+
+        &__inputfield {
+            padding-top: 15px;
+        }
+    }
+
+    #map {
+        margin-bottom: 5vh;
+    }
+  }
