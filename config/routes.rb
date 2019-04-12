@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
     }
 
-  resources :hints do
+    
+    resources :hints, :except => [:show] do
     collection do
       patch :sort
     end
