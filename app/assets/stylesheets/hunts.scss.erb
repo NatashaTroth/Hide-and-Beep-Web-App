@@ -5,7 +5,6 @@
 .create-hunt__section{
     margin-top: 5vh;
 
-    //SHOULD CHANGE THIS TO CLASSES
     form{
         display: grid;
         grid-template-rows: repeat(3, 1fr);
@@ -152,7 +151,6 @@
  @media screen and (max-width: 850px) {
 
     .hunts-index{
-
         &__titles{
             grid-template-columns: 1.5fr 0.8fr 1fr; 
         }
@@ -170,8 +168,7 @@
           //  max-width: 80px;
              font-size: 15px !important;
              padding: 10px ;
-             margin-top: 5px;
-             align-self: flex-start;
+             margin-top: 10px;
 
         }
         &__edit-button, &__delete-button{
@@ -179,3 +176,24 @@
       }
     }
  }
+
+  @media screen and (max-width: 750px) {
+
+    .create-hunt__section{
+        form{
+            display:initial;
+        }
+    }
+
+    .create-hunt{
+
+        &__form-heading {
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        &__no-time-limit{
+            margin-top:10px;
+            justify-content: flex-start;
+        }
+    }
+  }
