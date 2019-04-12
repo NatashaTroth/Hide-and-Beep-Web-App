@@ -2,7 +2,7 @@
         <p class="hunts-index__hunt-name"><%= hunt.name %></p>
         <p><%= hunt.authentification_key %></p>
 
-        <p><%= hunt.start_date.to_date %></p>
+        <p class="hunts-index__start-date"><%= hunt.start_date.to_date %></p>
         <%= link_to image_tag('editBtn.svg', alt: "Edit button"),  edit_hunt_path(hunt), class: "hunts-index__edit-button" %>
         <%= link_to image_tag('deleteBtn.svg', alt: "Delete button"),  hunt, method: :delete, data: { confirm: 'Are you sure?' }, class: "hunts-index__delete-button" %>
     </li>  
