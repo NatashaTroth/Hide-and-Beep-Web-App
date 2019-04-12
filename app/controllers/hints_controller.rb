@@ -7,6 +7,7 @@ class HintsController < ApplicationController
     if hunt_param.present?
       @hints = Hint.all.where("hunt_id= " + hunt_param).order(:position)
       @hunt_id = hunt_param
+      sum = Hint.all
     else
       redirect_to home_path
     end
@@ -85,7 +86,7 @@ class HintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hint_params
-      params.require(:hint).permit(:order, :location_name, :latitude, :longitude, :text, :hunt_id)
+      params.require(:hint).permit(:order, :location_name, :latitude, :longitude, :text, :hunt_id, :position)
     end
 
     def hunt_param
