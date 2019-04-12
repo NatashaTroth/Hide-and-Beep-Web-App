@@ -19,7 +19,7 @@
       <p class="hints-index__hint-position"><%= @hints.size %></p>
         <%= form_with(model: hint, local: true) do |form| %>
           <%= form.hidden_field :position, value: @hints.size %>
-        <%= form.submit "👈🏻  Save hint number?  ", :class => 'button create-hint__save-hint-num' %>
+        <%= form.submit "👈🏻  Click here to save hint position  ", :class => 'button create-hint__save-hint-num' %>
       <% end %>
     <% end %>
 
