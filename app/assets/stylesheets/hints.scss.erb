@@ -164,3 +164,36 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 750px) {
+
+    .create-hint__section{
+        form{
+            display:initial;
+        }
+    }
+
+    .create-hint{
+        &__hint-article {
+            padding: 20px;
+            height: 122vh;
+        }
+
+        &__form-heading {
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        &__no-time-limit{
+            margin-top:10px;
+            justify-content: flex-start;
+        }
+
+        &__inputfield {
+            padding-top: 15px;
+        }
+    }
+
+    #map {
+        margin-bottom: 5vh;
+    }
+  }
