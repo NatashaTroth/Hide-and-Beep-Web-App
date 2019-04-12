@@ -9,7 +9,7 @@ class HuntsController < ApplicationController
     #@hunts = Hunt.all.order(:start_date)
     respond_to do |format|
       format.html { 
-        @hunts = Hunt.order(:updated_at).page(params[:page]) 
+        @hunts = Hunt.where(user_id: current_user.id).order(:updated_at).page(params[:page]) 
         render :index
       }
       format.json { 
@@ -41,6 +41,7 @@ class HuntsController < ApplicationController
   # POST /hunts.json
   def create
     @hunt = Hunt.new(hunt_params)
+    @hunt.user_id = current_user.id
     @hunt.authentification_key = create_authentification_key(@hunt.name)
     respond_to do |format|
       if @hunt.save
