@@ -1,5 +1,6 @@
 class Hunt < ApplicationRecord
     has_many :hints, dependent: :destroy
+    belongs_to :user
     validates :name, :start_date, :expiry_date, :winning_code, :authentification_key, presence: true
     validates :name, uniqueness: true 
     validates :start_date, :expiry_date, date: true 
