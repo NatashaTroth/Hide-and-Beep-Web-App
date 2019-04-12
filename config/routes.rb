@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
     }
 
-  resources :hints do
+    
+    resources :hints, :except => [:show] do
     collection do
       patch :sort
     end
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   resources :hunts
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
+  get '/huntsJson.json', to: 'hunts#indexJson' 
+  get '/users', to: redirect("/home")
 
 
   #root :to => redirect("/users/sign_in")
