@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :hunts
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
-
+  get '/huntsJson.json', to: 'hunts#indexJson' 
 
   #root :to => redirect("/users/sign_in")
 

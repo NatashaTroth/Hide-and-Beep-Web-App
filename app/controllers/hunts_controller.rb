@@ -10,10 +10,17 @@ class HuntsController < ApplicationController
    @hunts = Hunt.order(:updated_at).page(params[:page])
   end
 
+  #new Action for api -> because of pagination - to get all hunts not just 5 from that page
+  def indexJson
+   @hunts = Hunt.order(:updated_at)
+   
+  end
+
   # GET /hunts/1
   # GET /hunts/1.json
   def show
   end
+
 
   # GET /hunts/new
   def new
