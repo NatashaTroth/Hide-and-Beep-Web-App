@@ -18,7 +18,7 @@
 
   <div class="field create-hint__div create-hint__location-name">
     <%= form.label :location_name, "Hint location", :class => 'create-hint__inputfield create-hunt__form-heading' %>
-    <%= form.text_field :location_name, :class => 'create-hint__textarea', placeholder: "e.g. Behind a tree..." %>
+    <%= form.text_field :location_name, :maxlength => 15, :class => 'create-hint__textarea', placeholder: "e.g. Behind a tree..." %>
   </div>
 
   <div class="field create-hint__div create-hint__latitude">
