@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
   get '/huntsJson.json', to: 'hunts#indexJson' 
+  get '/users', to: redirect("/home")
+
 
   #root :to => redirect("/users/sign_in")
 
