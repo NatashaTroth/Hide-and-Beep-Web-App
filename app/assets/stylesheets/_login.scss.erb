@@ -43,12 +43,12 @@
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
-    padding: 6vh 4vw 28vh;
+    padding: 6vh 1vw 28vh;
 }
 
- .signup__signup-article {
-  padding: 6vh 4vw 28vh;
- }
+ /*.signup__signup-article {
+  padding: 6vh 1vw 28vh;
+ }*/
 
 .login__div, .signup__div, .forgotPassword-submitBtn__div, .signup-submitBtn__div {
     padding: 10px;
@@ -104,8 +104,15 @@
     max-width: 150px;
 }
 
+@media screen and (max-width: 1054px){
+    .login-sheepBubble__flex, .signup-sheepBubble__flex {
+        display: initial;
+    }
+
+}
+
 // MEDIA QUERIES
-@media screen and (max-width: 432px) {
+@media screen and (max-width: 502px) {
     .login__login-article, .signup__signup-article {
         background: $cream;
         box-shadow: 3px 3px 2px #aaaaaa;
@@ -116,3 +123,23 @@
         width: 100%;
     }
   }
+
+
+@media screen and (max-width: 494px){
+    .login__form-links-container{
+        align-items: center;
+    
+    }
+
+    .login__button{
+        margin: 5px 0;
+        align-self: center;
+        justify-self: center;
+    }
+    .login__submit-button-container{
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
