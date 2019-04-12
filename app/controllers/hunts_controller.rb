@@ -7,13 +7,16 @@ class HuntsController < ApplicationController
   # GET /hunts.json
   def index
     #@hunts = Hunt.all.order(:start_date)
-   @hunts = Hunt.order(:updated_at).page(params[:page])
-  end
-
-  #new Action for api -> because of pagination - to get all hunts not just 5 from that page
-  def indexJson
-   @hunts = Hunt.order(:updated_at)
-   
+    respond_to do |format|
+      format.html { 
+        @hunts = Hunt.order(:updated_at).page(params[:page]) 
+        render :index
+      }
+      format.json { 
+        @hunts = Hunt.order(:updated_at)
+        render :index
+      }
+    end
   end
 
   # GET /hunts/1
