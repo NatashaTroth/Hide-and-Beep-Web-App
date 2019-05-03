@@ -7,8 +7,8 @@
 
     form{
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         padding:3vh 3vw 3vh;
     }
 }
@@ -56,12 +56,12 @@
 
     &__time-limit{
         grid-row: 3/4;
-        grid-column: 1/2; 
+        grid-column: 2/3; 
     }
 
     &__no-time-limit{
         grid-row: 3/4;
-        grid-column: 2/3; 
+        grid-column: 1/2; 
         flex-direction: row;
         justify-content: space-evenly;
         align-items: baseline;
@@ -70,8 +70,8 @@
     }
 
     &__submit-button{
-        grid-row: 3/4;
-        grid-column: 3/4; 
+        grid-row: 4/4;
+        grid-column: 2/3; 
         align-self: end;
         width:90%;
     }
