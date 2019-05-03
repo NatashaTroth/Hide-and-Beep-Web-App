@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,50 +12,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_145028) do
-
+ActiveRecord::Schema.define(version: 20_190_412_145_028) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "hints", force: :cascade do |t|
-    t.integer "order"
-    t.string "location_name"
-    t.decimal "latitude"
-    t.decimal "longitude"
-    t.text "text"
-    t.integer "hunt_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "position"
-    t.index ["hunt_id"], name: "index_hints_on_hunt_id"
+  create_table 'hints', force: :cascade do |t|
+    t.integer 'order'
+    t.string 'location_name'
+    t.decimal 'latitude'
+    t.decimal 'longitude'
+    t.text 'text'
+    t.integer 'hunt_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'position'
+    t.index ['hunt_id'], name: 'index_hints_on_hunt_id'
   end
 
-  create_table "hunts", force: :cascade do |t|
-    t.string "name"
-    t.date "start_date"
-    t.date "expiry_date"
-    t.time "set_time_limit", default: "2000-01-01 00:00:00"
-    t.boolean "no_time_limit", default: false
-    t.string "winning_code"
-    t.string "authentification_key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_hunts_on_user_id"
+  create_table 'hunts', force: :cascade do |t|
+    t.string 'name'
+    t.date 'start_date'
+    t.date 'expiry_date'
+    t.time 'set_time_limit', default: '2000-01-01 00:00:00'
+    t.boolean 'no_time_limit', default: false
+    t.string 'winning_code'
+    t.string 'authentification_key'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'user_id'
+    t.index ['user_id'], name: 'index_hunts_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "hints", "hunts"
-  add_foreign_key "hunts", "users"
+  add_foreign_key 'hints', 'hunts'
+  add_foreign_key 'hunts', 'users'
 end

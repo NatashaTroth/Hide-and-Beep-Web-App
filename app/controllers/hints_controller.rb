@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class HintsController < ApplicationController
-  before_action :set_hint, only: [:show, :edit, :update, :destroy]
+  before_action :set_hint, only: %i[show edit update destroy]
 
   # GET /hints
   # GET /hints.json
   def index
     if hunt_param.present?
-      @hints = Hint.all.where("hunt_id= " + hunt_param).order(:position)
+      @hints = Hint.all.where('hunt_id= ' + hunt_param).order(:position)
       @hunt_id = hunt_param
       sum = Hint.all
     else
@@ -15,9 +17,9 @@ class HintsController < ApplicationController
 
   def sort
     if params[:hint].present?
-    params[:hint].each_with_index do | id, index |
-      Hint.where(id: id).update_all(position: index + 1)
-    end
+      params[:hint].each_with_index do |id, index|
+        Hint.where(id: id).update_all(position: index + 1)
+      end
     end
     head :ok
   end
@@ -79,19 +81,18 @@ class HintsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hint
-      @hint = Hint.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def hint_params
-      params.require(:hint).permit(:order, :location_name, :latitude, :longitude, :text, :hunt_id, :position)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hint
+    @hint = Hint.find(params[:id])
+  end
 
-    def hunt_param
-      if params.has_key?(:hunt_id)
-        params.require(:hunt_id)
-      end
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def hint_params
+    params.require(:hint).permit(:order, :location_name, :latitude, :longitude, :text, :hunt_id, :position)
+  end
+
+  def hunt_param
+    params.require(:hunt_id) if params.key?(:hunt_id)
+  end
 end
