@@ -12,10 +12,10 @@ class HuntsController < ApplicationController
         @hunts = Hunt.where(user_id: current_user.id).order(:updated_at).page(params[:page]) 
         render :index
       }
-      format.json { 
-        @hunts = Hunt.order(:updated_at)
-        render :index
-      }
+      # format.json { 
+      #   @hunts = Hunt.order(:updated_at)
+      #   render :index
+      # }
     end
   end
 
@@ -34,6 +34,17 @@ class HuntsController < ApplicationController
   def edit
     if hunt_param.present?
       @hunt_id = hunt_param
+    end
+  end
+
+  def showByKey
+    respond_to do |format|
+     format.json { 
+       if get_authentification_key.present?
+         auth_key =  get_authentification_key
+         @hunt = Hunt.find_by(authentification_key: auth_key)
+       end
+      }
     end
   end
 
@@ -92,6 +103,12 @@ class HuntsController < ApplicationController
     def hunt_param
       if params.has_key?(:hunt_id)
         params.require(:hunt_id)
+      end
+    end
+
+    def get_authentification_key
+      if params.has_key?(:auth_key)
+        params.require(:auth_key)
       end
     end
 
