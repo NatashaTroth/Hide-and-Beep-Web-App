@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.6'
 
+#Webops
+gem 'newrelic_rpm'
+
 gem 'rails', '~> 5.2.3'
 gem 'pg'
 gem 'puma', '~> 3.11'
