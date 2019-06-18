@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :hunts
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
-  get '/privacy_policy', to: 'pages#privacy_policy'
+  get '/privacy-policy', to: 'pages#privacy_policy'
   get '/huntsJson.json', to: 'hunts#indexJson' 
   get '/users', to: redirect("/home")
   get '/hunt', to: 'hunts#showByKey'
