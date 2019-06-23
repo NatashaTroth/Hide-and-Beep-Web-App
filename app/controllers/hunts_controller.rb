@@ -3,7 +3,7 @@
 require 'digest'
 
 class HuntsController < ApplicationController
-  before_action :set_hunt, only: %i[show edit update destroy]
+  before_action :set_hunt, only: %i[edit update destroy]
 
   # GET /hunts
   # GET /hunts.json
@@ -19,7 +19,21 @@ class HuntsController < ApplicationController
 
   # GET /hunts/1
   # GET /hunts/1.json
-  def show; end
+  def show
+    respond_to do |format|
+      # GET /hunt.json?auth_key=...
+      format.json do
+        if authentification_key.present?
+          @hunt = Hunt.find_by(authentification_key: authentification_key)
+        end
+      end
+
+      format.html do 
+        @hunt = Hunt.find(params[:id])
+      end
+
+    end
+  end
 
   # GET /hunts/new
   def new
@@ -31,17 +45,6 @@ class HuntsController < ApplicationController
     @hunt_id = hunt_param if hunt_param.present?
   end
 
-  # GET /hunt.json?auth_key=...
-  def show_by_key
-    respond_to do |format|
-      format.json do
-        if authentification_key.present?
-          auth_key = authentification_key
-          @hunt = Hunt.find_by(authentification_key: auth_key)
-        end
-      end
-    end
-  end
 
   # POST /hunts
   # POST /hunts.json

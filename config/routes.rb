@@ -15,12 +15,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :hunts
+  resources :hunts, except: [:show]
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
   get '/privacy-policy', to: 'pages#privacy_policy'
   get '/users', to: redirect('/home')
-  get '/hunt', to: 'hunts#show_by_key'
+  get '/hunt.json', to: 'hunts#show'
 
   root 'pages#home'
 end
