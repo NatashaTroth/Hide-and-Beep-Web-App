@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateHints < ActiveRecord::Migration[5.2]
   def change
     create_table :hints do |t|
@@ -11,8 +13,8 @@ class CreateHints < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_foreign_key :hints, 
-                    :hunts, 
+    add_foreign_key :hints,
+                    :hunts,
                     column: :hunt_id
     add_index :hints, :hunt_id
   end
