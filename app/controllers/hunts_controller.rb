@@ -23,15 +23,12 @@ class HuntsController < ApplicationController
     respond_to do |format|
       # GET /hunt.json?auth_key=...
       format.json do
-        if authentification_key.present?
-          @hunt = Hunt.find_by(authentification_key: authentification_key)
-        end
+        @hunt = Hunt.find_by(authentification_key: authentification_key) if authentification_key.present?
       end
 
-      format.html do 
+      format.html do
         @hunt = Hunt.find(params[:id])
       end
-
     end
   end
 
@@ -44,7 +41,6 @@ class HuntsController < ApplicationController
   def edit
     @hunt_id = hunt_param if hunt_param.present?
   end
-
 
   # POST /hunts
   # POST /hunts.json
