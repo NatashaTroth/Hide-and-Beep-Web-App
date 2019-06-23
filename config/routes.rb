@@ -18,16 +18,10 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
   get '/privacy-policy', to: 'pages#privacy_policy'
-  get '/huntsJson.json', to: 'hunts#indexJson' 
   get '/users', to: redirect("/home")
   get '/hunt', to: 'hunts#showByKey'
 
 
-  #root :to => redirect("/users/sign_in")
-
   root 'pages#home'
-  # devise_scope :user do
-  #   root to: "devise/sessions#new"
-  # end
 
 end

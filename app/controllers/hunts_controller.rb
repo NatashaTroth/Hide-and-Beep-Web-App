@@ -6,22 +6,18 @@ class HuntsController < ApplicationController
   # GET /hunts
   # GET /hunts.json
   def index
-    #@hunts = Hunt.all.order(:start_date)
+    @hunts = Hunt.all.order(:start_date)
     respond_to do |format|
       format.html { 
         @hunts = Hunt.where(user_id: current_user.id).order(:updated_at).page(params[:page]) 
         render :index
       }
-      # format.json { 
-      #   @hunts = Hunt.order(:updated_at)
-      #   render :index
-      # }
     end
   end
 
   # GET /hunts/1
   # GET /hunts/1.json
-  def show
+  def show    
   end
 
 
@@ -37,6 +33,7 @@ class HuntsController < ApplicationController
     end
   end
 
+  #GET /hunt.json?auth_key=...
   def showByKey
     respond_to do |format|
      format.json { 
