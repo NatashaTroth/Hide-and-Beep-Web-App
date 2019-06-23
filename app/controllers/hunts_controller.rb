@@ -48,7 +48,7 @@ class HuntsController < ApplicationController
   def create
     @hunt = Hunt.new(hunt_params)
     @hunt.user_id = current_user.id
-    @hunt.authentification_key = create_authentification_key(@hunt.name)
+    @hunt.authentification_key = @hunt.create_authentification_key
     respond_to do |format|
       if @hunt.save
         format.html { redirect_to hints_path(hunt_id: @hunt.id), notice: 'Hunt was successfully created.' }
@@ -102,11 +102,5 @@ class HuntsController < ApplicationController
 
   def authentification_key
     params.require(:auth_key) if params.key?(:auth_key)
-  end
-
-  def create_authentification_key
-    # modified from https://stackoverflow.com/a/88341
-    o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
-    (0...10).map { o[rand(o.length)] }.join
   end
 end
