@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   resources :hunts, except: [:show]
   get '/home', to: 'pages#home'
   get '/help', to: 'pages#help'
-  get '/privacy-policy', to: 'pages#privacy_policy'
+  get '/privacy-policy-app', to: 'pages#privacy_policy_app'
+  #get '/privacy-policy', to: 'pages#privacy_policy'
   get '/users', to: redirect('/home')
   get '/hunt.json', to: 'hunts#show'
 
