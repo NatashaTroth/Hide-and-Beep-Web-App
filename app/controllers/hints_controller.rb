@@ -7,7 +7,7 @@ class HintsController < ApplicationController
   # GET /hints.json
   def index
     if hunt_param.present?
-      @hints = Hint.all.where('hunt_id= ' + hunt_param).order(:position)
+      @hints = Hint.all.where(['hunt_id=?', hunt_param]).order(:position)
       @hunt_id = hunt_param
       # sum = Hint.all
     else
