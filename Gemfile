@@ -27,6 +27,8 @@ gem 'devise'
 # map
 gem 'leaflet-rails'
 
+gem 'rubocop-rails'
+
 # drag and drop for hints overview
 gem 'acts_as_list'
 gem 'jquery-rails'
